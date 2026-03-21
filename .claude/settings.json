@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm text.txt)",
+      "Bash(composer create-project:*)",
+      "Bash(mv c:/xampp/htdocs/_ci4tmp/* c:/xampp/htdocs/cycloidtalent/)",
+      "Bash(mv c:/xampp/htdocs/_ci4tmp/.[!.]* c:/xampp/htdocs/cycloidtalent/)",
+      "Bash(rm -rf c:/xampp/htdocs/_ci4tmp)",
+      "Bash(php spark:*)",
+      "Read(//c/xampp/apache/conf/extra/**)",
+      "Read(//c/Windows/System32/drivers/etc/**)",
+      "Bash(grep -v \"^$\")",
+      "Read(//c/xampp/apache/conf/**)",
+      "Read(//d/sitio viejo de cycloid talent joomla/cycloidtalent/cycloidtalent/**)",
+      "Bash(grep -E \"\\\\.\\(jpg|jpeg|png|gif|webp|svg\\)$\")",
+      "Bash(find 'D:/sitio viejo de cycloid talent joomla/cycloidtalent/cycloidtalent/images' -iname *edison* -o -iname *diana* -o -iname *eleyson* -o -iname *natalia* -o -iname *equipo* -o -iname *team*)",
+      "Bash(find 'D:/sitio viejo de cycloid talent joomla/cycloidtalent/cycloidtalent' -iname *.pdf)",
+      "Bash(find 'D:/sitio viejo de cycloid talent joomla/cycloidtalent/cycloidtalent/images' -iname *meltec* -o -iname *polux* -o -iname *cliente* -o -iname *client*)",
+      "Read(//d/sitio viejo de cycloid talent joomla/**)",
+      "Read(//d/sitio viejo de cycloid talent joomla/cycloidtalent/**)",
+      "Bash(tar -tzf 'D:/sitio viejo de cycloid talent joomla/cycloidtalent.tar.gz')",
+      "Bash(tar -tf 'D:/sitio viejo de cycloid talent joomla/cycloidtalent.tar.gz')",
+      "Bash(tar -tzf cycloidtalent.tar.gz)",
+      "Bash(npm --version)",
+      "Bash(npm init:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)"
+    ],
+    "additionalDirectories": [
+      "c:\\xampp\\apache\\conf\\extra",
+      "C:\\Windows\\System32\\drivers\\etc",
+      "\\tmp"
+    ]
+  }
+}
