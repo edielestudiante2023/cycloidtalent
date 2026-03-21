@@ -90,7 +90,6 @@ vendor/
 # Node / Tailwind
 #-------------------------
 node_modules/
-public/assets/css/output.css
 
 #-------------------------
 # IDE / Development Files
