@@ -76,17 +76,57 @@
     </div>
 </section>
 
-<!-- Galería de imágenes RPS -->
+<!-- Carrusel de imágenes RPS -->
 <section class="py-16 bg-cycloid-bg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-2xl font-bold text-cycloid-navy mb-8 text-center">Nuestro trabajo en campo</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <?php for ($i = 1; $i <= 8; $i++): ?>
-            <div class="rounded-2xl overflow-hidden aspect-square bg-gray-100">
+
+        <div x-data="{
+            actual: 0,
+            total: 8,
+            prev() { this.actual = (this.actual - 1 + this.total) % this.total },
+            next() { this.actual = (this.actual + 1) % this.total }
+        }" class="relative">
+
+            <!-- Imagen principal -->
+            <div class="relative rounded-2xl overflow-hidden bg-gray-100 aspect-video">
+                <?php for ($i = 1; $i <= 8; $i++): ?>
                 <img src="<?= base_url('assets/img/services/rps-2026/' . $i . '.jpg') ?>"
-                     alt="Evaluación RPS" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                     alt="Portafolio RPS <?= $i ?>"
+                     class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
+                     :class="actual === <?= $i - 1 ?> ? 'opacity-100' : 'opacity-0'">
+                <?php endfor; ?>
+
+                <!-- Flechas -->
+                <button @click="prev()"
+                        class="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-cycloid-navy w-10 h-10 rounded-full flex items-center justify-center shadow transition">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                    </svg>
+                </button>
+                <button @click="next()"
+                        class="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-cycloid-navy w-10 h-10 rounded-full flex items-center justify-center shadow transition">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </button>
+
+                <!-- Contador -->
+                <span class="absolute bottom-3 right-4 bg-black/50 text-white text-xs px-3 py-1 rounded-full"
+                      x-text="(actual + 1) + ' / ' + total"></span>
             </div>
-            <?php endfor; ?>
+
+            <!-- Miniaturas -->
+            <div class="flex gap-2 mt-3 overflow-x-auto pb-1">
+                <?php for ($i = 1; $i <= 8; $i++): ?>
+                <button @click="actual = <?= $i - 1 ?>"
+                        class="shrink-0 w-16 h-16 rounded-xl overflow-hidden border-2 transition"
+                        :class="actual === <?= $i - 1 ?> ? 'border-cycloid-blue' : 'border-transparent opacity-60 hover:opacity-100'">
+                    <img src="<?= base_url('assets/img/services/rps-2026/' . $i . '.jpg') ?>"
+                         alt="Miniatura <?= $i ?>" class="w-full h-full object-cover">
+                </button>
+                <?php endfor; ?>
+            </div>
         </div>
     </div>
 </section>
