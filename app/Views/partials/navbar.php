@@ -15,7 +15,7 @@
                    class="hover:text-cycloid-blue transition-colors">Nosotros</a>
 
                 <!-- Servicios dropdown -->
-                <div class="relative" x-data="{ open: false }" @click.away="open = false">
+                <div class="relative" x-data="{ open: false }" @click.outside="open = false">
                     <button @click="open = !open"
                             class="flex items-center gap-1 hover:text-cycloid-blue transition-colors"
                             :class="open ? 'text-cycloid-blue' : ''">
