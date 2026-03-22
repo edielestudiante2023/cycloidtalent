@@ -15,16 +15,21 @@
                    class="hover:text-cycloid-blue transition-colors">Nosotros</a>
 
                 <!-- Servicios dropdown -->
-                <div class="relative" x-data="{ open: false }"
-                     @mouseenter="open = true" @mouseleave="open = false">
-                    <button class="flex items-center gap-1 hover:text-cycloid-blue transition-colors">
+                <div class="relative" x-data="{ open: false }" @click.away="open = false">
+                    <button @click="open = !open"
+                            class="flex items-center gap-1 hover:text-cycloid-blue transition-colors"
+                            :class="open ? 'text-cycloid-blue' : ''">
                         Servicios
-                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg class="w-4 h-4 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                         </svg>
                     </button>
-                    <div x-show="open" x-transition
-                         class="absolute top-full left-0 mt-1 w-56 bg-white rounded-xl shadow-lg border border-gray-100 py-2 z-50">
+                    <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                         x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                         x-transition:leave="transition ease-in duration-75"
+                         x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                         class="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-gray-100 py-2 z-50"
+                         @click="open = false">
                         <a href="<?= base_url('servicios/consultoria-sst') ?>"
                            class="block px-4 py-2 hover:bg-cycloid-bg hover:text-cycloid-blue transition-colors">Consultoría SG-SST</a>
                         <a href="<?= base_url('servicios/riesgo-psicosocial') ?>"
