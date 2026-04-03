@@ -8,7 +8,7 @@ class HomeController extends BaseController
     {
         $data = [
             'title'       => 'Inicio',
-            'description' => 'Cycloid Talent — Consultoría SST, Baterías de Riesgo Psicosocial y Seguridad Laboral en Colombia. Decreto 1072 y Resolución 0312.',
+            'description' => 'Cycloid Talent — Consultoría especializada en Seguridad y Salud en el Trabajo y gestión del riesgo psicosocial para empresas colombianas.',
             'canonical'   => base_url('/'),
             'jsonld'      => seo_organization_jsonld(),
         ];

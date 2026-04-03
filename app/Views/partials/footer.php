@@ -7,7 +7,7 @@
                 <img src="<?= base_url('assets/img/logos/cycloid-logo-blanco.png') ?>"
                      alt="Cycloid Talent" class="h-10 w-auto mb-4" loading="lazy">
                 <p class="text-sm text-gray-400 leading-relaxed">
-                    Consultoría en SST, Riesgo Psicosocial y Seguridad Laboral para empresas colombianas.
+                    Consultoría especializada en Seguridad y Salud en el Trabajo y gestión del riesgo psicosocial para empresas colombianas.
                 </p>
             </div>
 
