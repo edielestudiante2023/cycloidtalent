@@ -1,7 +1,7 @@
 <?= $this->extend('layouts/main') ?>
 <?= $this->section('content') ?>
 
-<section class="bg-cycloid-navy text-white py-16">
+<section class="bg-cycloid-navy text-white py-10 sm:py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav class="text-sm text-gray-400 mb-4">
             <a href="<?= base_url('/') ?>" class="hover:text-white">Inicio</a>
@@ -18,7 +18,7 @@
 
 <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
                 <h2 class="text-2xl md:text-3xl font-bold text-cycloid-navy mb-5">¿Qué incluye nuestro servicio?</h2>
                 <p class="text-gray-500 leading-relaxed mb-8">
@@ -46,7 +46,7 @@
                     <?php endforeach; ?>
                 </ul>
             </div>
-            <div class="bg-cycloid-bg rounded-2xl p-8 border border-gray-100">
+            <div class="bg-cycloid-bg rounded-2xl p-5 sm:p-8 border border-gray-100">
                 <h3 class="font-bold text-cycloid-navy mb-6 text-lg">Normativa que cumplimos</h3>
                 <div class="space-y-4">
                     <?php

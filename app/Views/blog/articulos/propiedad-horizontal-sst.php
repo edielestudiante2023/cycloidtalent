@@ -16,10 +16,10 @@
     </div>
 </section>
 
-<article class="py-16 bg-white">
+<article class="py-12 sm:py-16 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div class="rounded-2xl overflow-hidden mb-10 aspect-video bg-gray-100">
+        <div class="rounded-2xl overflow-hidden mb-6 sm:mb-10 aspect-video bg-gray-100">
             <img src="<?= base_url('assets/img/blog/propiedad-horizontal.png') ?>"
                  alt="SST en propiedad horizontal" class="w-full h-full object-cover">
         </div>

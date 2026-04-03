@@ -1,7 +1,7 @@
 <?= $this->extend('layouts/main') ?>
 <?= $this->section('content') ?>
 
-<section class="bg-cycloid-navy text-white py-16">
+<section class="bg-cycloid-navy text-white py-10 sm:py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p class="text-cycloid-cyan text-sm font-semibold uppercase tracking-widest mb-3">Blog</p>
         <h1 class="text-3xl md:text-5xl font-extrabold">Seguridad y Salud en el Trabajo</h1>
@@ -11,9 +11,9 @@
     </div>
 </section>
 
-<section class="py-20 bg-white">
+<section class="py-14 sm:py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             <?php foreach ($articulos as $a): ?>
             <article class="bg-cycloid-bg rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow group">
                 <a href="<?= base_url('blog/' . $a['slug']) ?>">
@@ -24,7 +24,7 @@
                              onerror="this.style.display='none'">
                     </div>
                 </a>
-                <div class="p-6">
+                <div class="p-4 sm:p-6">
                     <time class="text-xs text-gray-400 uppercase tracking-wide">
                         <?= date('d M Y', strtotime($a['fecha'])) ?>
                     </time>

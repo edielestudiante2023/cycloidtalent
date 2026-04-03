@@ -2,7 +2,7 @@
 <?= $this->section('content') ?>
 
 <!-- Hero mini -->
-<section class="bg-cycloid-navy text-white py-16">
+<section class="bg-cycloid-navy text-white py-10 sm:py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p class="text-cycloid-cyan text-sm font-semibold uppercase tracking-widest mb-3">Quiénes confían en nosotros</p>
         <h1 class="text-3xl md:text-5xl font-extrabold">Nuestros clientes</h1>
@@ -13,7 +13,7 @@
 </section>
 
 <!-- Grid de logos -->
-<section class="py-20 bg-white">
+<section class="py-14 sm:py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-14">
             <p class="text-cycloid-blue text-sm font-semibold uppercase tracking-widest mb-2">Más de 50 empresas atendidas</p>
@@ -50,7 +50,7 @@
         <div class="text-center mb-10">
             <h2 class="text-2xl md:text-3xl font-bold text-cycloid-navy">Sectores que atendemos</h2>
         </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             <?php
             $sectores = ['Manufactura', 'Servicios', 'Propiedad Horizontal', 'Construcción', 'Comercio', 'Salud', 'Logística', 'Tecnología'];
             foreach ($sectores as $s): ?>

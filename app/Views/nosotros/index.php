@@ -2,7 +2,7 @@
 <?= $this->section('content') ?>
 
 <!-- Hero mini -->
-<section class="bg-cycloid-navy text-white py-16">
+<section class="bg-cycloid-navy text-white py-10 sm:py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p class="text-cycloid-cyan text-sm font-semibold uppercase tracking-widest mb-3">Quiénes somos</p>
         <h1 class="text-3xl md:text-5xl font-extrabold">Nosotros</h1>
@@ -13,10 +13,10 @@
 </section>
 
 <!-- Misión y Visión -->
-<section class="py-20 bg-white">
+<section class="py-14 sm:py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div class="bg-cycloid-bg rounded-2xl p-8 border border-gray-100">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-10">
+            <div class="bg-cycloid-bg rounded-2xl p-5 sm:p-8 border border-gray-100">
                 <div class="w-12 h-12 bg-cycloid-blue/10 rounded-xl flex items-center justify-center mb-5">
                     <svg class="w-6 h-6 text-cycloid-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
@@ -27,7 +27,7 @@
                     Brindar soluciones integrales en Seguridad y Salud en el Trabajo que protejan la integridad de los trabajadores y garanticen el cumplimiento normativo de las empresas colombianas, a través de un servicio especializado, humano y efectivo.
                 </p>
             </div>
-            <div class="bg-cycloid-bg rounded-2xl p-8 border border-gray-100">
+            <div class="bg-cycloid-bg rounded-2xl p-5 sm:p-8 border border-gray-100">
                 <div class="w-12 h-12 bg-cycloid-cyan/10 rounded-xl flex items-center justify-center mb-5">
                     <svg class="w-6 h-6 text-cycloid-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
@@ -44,7 +44,7 @@
 </section>
 
 <!-- Principios -->
-<section class="py-20 bg-cycloid-bg">
+<section class="py-14 sm:py-20 bg-cycloid-bg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-14">
             <p class="text-cycloid-blue text-sm font-semibold uppercase tracking-widest mb-2">Lo que nos guía</p>
@@ -74,7 +74,7 @@
 </section>
 
 <!-- Equipo -->
-<section class="py-20 bg-white">
+<section class="py-14 sm:py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-14">
             <p class="text-cycloid-blue text-sm font-semibold uppercase tracking-widest mb-2">Las personas detrás</p>
@@ -90,7 +90,7 @@
             ];
             foreach ($equipo as $m): ?>
             <div class="text-center">
-                <div class="w-36 h-36 mx-auto mb-4 rounded-full overflow-hidden border-4 border-cycloid-bg shadow-md">
+                <div class="w-28 h-28 sm:w-36 sm:h-36 mx-auto mb-4 rounded-full overflow-hidden border-4 border-cycloid-bg shadow-md">
                     <img src="<?= base_url('assets/img/team/' . $m['foto']) ?>"
                          alt="<?= $m['nombre'] ?>"
                          class="w-full h-full object-cover">

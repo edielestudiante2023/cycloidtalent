@@ -1,7 +1,7 @@
 <?= $this->extend('layouts/main') ?>
 <?= $this->section('content') ?>
 
-<section class="bg-cycloid-navy text-white py-16">
+<section class="bg-cycloid-navy text-white py-10 sm:py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav class="text-sm text-gray-400 mb-4">
             <a href="<?= base_url('/') ?>" class="hover:text-white">Inicio</a>
@@ -18,7 +18,7 @@
 
 <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             <div>
                 <h2 class="text-2xl md:text-3xl font-bold text-cycloid-navy mb-5">¿Qué evaluamos?</h2>
                 <p class="text-gray-500 leading-relaxed mb-8">
@@ -99,13 +99,13 @@
 
                 <!-- Flechas -->
                 <button @click="prev()"
-                        class="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-cycloid-navy w-10 h-10 rounded-full flex items-center justify-center shadow transition">
+                        class="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-cycloid-navy w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center shadow transition">
                     <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                     </svg>
                 </button>
                 <button @click="next()"
-                        class="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-cycloid-navy w-10 h-10 rounded-full flex items-center justify-center shadow transition">
+                        class="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-cycloid-navy w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center shadow transition">
                     <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                     </svg>
@@ -120,7 +120,7 @@
             <div class="flex gap-2 mt-3 overflow-x-auto pb-1">
                 <?php for ($i = 1; $i <= 8; $i++): ?>
                 <button @click="actual = <?= $i - 1 ?>"
-                        class="shrink-0 w-16 h-16 rounded-xl overflow-hidden border-2 transition"
+                        class="shrink-0 w-12 h-12 sm:w-16 sm:h-16 rounded-xl overflow-hidden border-2 transition"
                         :class="actual === <?= $i - 1 ?> ? 'border-cycloid-blue' : 'border-transparent opacity-60 hover:opacity-100'">
                     <img src="<?= base_url('assets/img/services/rps-2026/' . $i . '.jpg') ?>"
                          alt="Miniatura <?= $i ?>" class="w-full h-full object-cover">

@@ -2,7 +2,7 @@
 <?= $this->section('content') ?>
 
 <!-- Hero mini -->
-<section class="bg-cycloid-navy text-white py-16">
+<section class="bg-cycloid-navy text-white py-10 sm:py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p class="text-cycloid-cyan text-sm font-semibold uppercase tracking-widest mb-3">Estamos para ayudarte</p>
         <h1 class="text-3xl md:text-5xl font-extrabold">Contacto</h1>
@@ -12,13 +12,13 @@
     </div>
 </section>
 
-<section class="py-20 bg-cycloid-bg">
+<section class="py-14 sm:py-20 bg-cycloid-bg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
 
             <!-- Formulario -->
             <div class="lg:col-span-2">
-                <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+                <div class="bg-white rounded-2xl p-5 sm:p-8 shadow-sm border border-gray-100">
                     <h2 class="text-xl font-bold text-cycloid-navy mb-6">Envíanos un mensaje</h2>
 
                     <?php if (session()->getFlashdata('success')): ?>
@@ -32,6 +32,14 @@
                         <?= session()->getFlashdata('error') ?>
                     </div>
                     <?php endif; ?>
+
+                    <div x-data="{ online: navigator.onLine }"
+                         x-init="window.addEventListener('online', () => online = true); window.addEventListener('offline', () => online = false)"
+                         x-show="!online"
+                         x-cloak
+                         class="mb-6 bg-amber-50 border border-amber-200 text-amber-800 rounded-xl px-4 py-3 text-sm">
+                        Sin conexión a internet. El formulario requiere conexión para enviar tu mensaje.
+                    </div>
 
                     <form action="<?= base_url('contacto/enviar') ?>" method="POST">
                         <?= csrf_field() ?>
