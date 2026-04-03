@@ -175,16 +175,16 @@
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-4">
-                <img src="<?= base_url('assets/img/services/rps-2026/1.jpg') ?>"
+                <img src="<?= base_url('assets/img/Portafolio RPS - ACTUALIZACIÓN 2026/1.png') ?>"
                      alt="Cycloid Talent en acción"
                      class="rounded-2xl object-cover w-full h-48 shadow-md" loading="lazy">
-                <img src="<?= base_url('assets/img/services/rps-2026/2.jpg') ?>"
+                <img src="<?= base_url('assets/img/Portafolio RPS - ACTUALIZACIÓN 2026/2.png') ?>"
                      alt="Capacitación SST"
                      class="rounded-2xl object-cover w-full h-48 shadow-md mt-6" loading="lazy">
-                <img src="<?= base_url('assets/img/services/rps-2026/3.jpg') ?>"
+                <img src="<?= base_url('assets/img/Portafolio RPS - ACTUALIZACIÓN 2026/5.png') ?>"
                      alt="Brigada de emergencia"
                      class="rounded-2xl object-cover w-full h-48 shadow-md" loading="lazy">
-                <img src="<?= base_url('assets/img/services/rps-2026/4.jpg') ?>"
+                <img src="<?= base_url('assets/img/Portafolio RPS - ACTUALIZACIÓN 2026/6.png') ?>"
                      alt="Consultoría SST"
                      class="rounded-2xl object-cover w-full h-48 shadow-md mt-6" loading="lazy">
             </div>
