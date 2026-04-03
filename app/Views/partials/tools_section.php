@@ -1,30 +1,29 @@
 <?php if (empty($tools)) return; ?>
 <!-- Nuestras Herramientas -->
-<section class="py-16 bg-white border-t border-gray-100">
+<section class="py-14 bg-white border-t border-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <!-- Header con Otto chaleco -->
-        <div class="flex items-center gap-4 mb-10">
+        <!-- Header compacto -->
+        <div class="flex items-center gap-3 mb-8">
             <img src="<?= base_url('img/ottochaleco.jpeg') ?>"
-                 alt="Otto - Asistente de campo Cycloid Talent"
-                 class="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover ring-2 ring-cycloid-cyan/30 shrink-0">
+                 alt="Otto"
+                 style="width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid #00C6FF;">
             <div>
-                <p class="text-cycloid-blue text-xs font-semibold uppercase tracking-widest mb-1">Tecnología propia</p>
-                <h2 class="text-xl sm:text-2xl font-bold text-cycloid-navy">Herramientas que respaldan este servicio</h2>
+                <p class="text-cycloid-blue text-xs font-semibold uppercase tracking-widest">Tecnología propia</p>
+                <h2 class="text-lg sm:text-xl font-bold text-cycloid-navy">Herramientas que respaldan este servicio</h2>
             </div>
         </div>
 
-        <!-- Tool Cards -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 <?= count($tools) >= 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-2' ?> gap-4">
+        <!-- Tool Cards centradas -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 <?= count($tools) >= 3 ? 'lg:grid-cols-' . min(count($tools), 4) : 'lg:grid-cols-2' ?> gap-5">
             <?php foreach ($tools as $tool): ?>
-            <div class="flex items-start gap-4 p-5 rounded-2xl bg-cycloid-bg border border-gray-100 hover:border-cycloid-blue/20 hover:shadow-sm transition-all">
+            <div class="flex flex-col items-center text-center p-6 rounded-2xl bg-cycloid-bg border border-gray-100 hover:border-cycloid-blue/20 hover:shadow-md transition-all">
                 <img src="<?= base_url('img/' . $tool['logo']) ?>"
                      alt="<?= $tool['name'] ?>"
-                     class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl object-contain bg-white p-1.5 border border-gray-100 shrink-0">
-                <div>
-                    <h3 class="font-bold text-cycloid-navy text-sm"><?= $tool['name'] ?></h3>
-                    <p class="text-xs text-gray-500 mt-1 leading-relaxed"><?= $tool['desc'] ?></p>
-                </div>
+                     style="width:80px;height:80px;object-fit:contain;"
+                     class="mb-4">
+                <h3 class="font-bold text-cycloid-navy text-sm mb-1"><?= $tool['name'] ?></h3>
+                <p class="text-xs text-gray-500 leading-relaxed"><?= $tool['desc'] ?></p>
             </div>
             <?php endforeach; ?>
         </div>
