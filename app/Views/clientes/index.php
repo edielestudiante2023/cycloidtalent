@@ -19,24 +19,22 @@
             <p class="text-cycloid-blue text-sm font-semibold uppercase tracking-widest mb-2">Más de 50 empresas atendidas</p>
             <h2 class="text-3xl md:text-4xl font-bold text-cycloid-navy">Empresas que nos eligen</h2>
             <p class="mt-4 text-gray-500 max-w-xl mx-auto">
-                Trabajamos con empresas de manufactura, servicios, propiedad horizontal y más sectores en Colombia.
+                Trabajamos con empresas de servicios, propiedad horizontal, financiero y más sectores en Colombia.
             </p>
         </div>
 
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 items-center">
             <?php
-            $clientes = [
-                ['logo' => 'meltec.png',  'nombre' => 'Meltec'],
-                ['logo' => 'polux.jpg',   'nombre' => 'Polux'],
-                ['logo' => 'client1.png', 'nombre' => 'Cliente'],
-                ['logo' => 'client2.png', 'nombre' => 'Cliente'],
-                ['logo' => 'client3.png', 'nombre' => 'Cliente'],
-                ['logo' => 'client4.png', 'nombre' => 'Cliente'],
-            ];
-            foreach ($clientes as $c): ?>
-            <div class="flex items-center justify-center p-6 bg-cycloid-bg rounded-2xl border border-gray-100 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 min-h-[100px]">
-                <img src="<?= base_url('assets/img/clients/' . $c['logo']) ?>"
-                     alt="<?= $c['nombre'] ?>"
+            $logosDir = FCPATH . 'assets/img/logos-clientes/';
+            $logos = glob($logosDir . '*.{jpg,jpeg,png,gif,webp}', GLOB_BRACE);
+            sort($logos);
+            foreach ($logos as $logoPath):
+                $filename = basename($logoPath);
+                $nombre = pathinfo($filename, PATHINFO_FILENAME);
+            ?>
+            <div class="flex items-center justify-center p-6 bg-cycloid-bg rounded-2xl border border-gray-100 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300" style="min-height:100px;">
+                <img src="<?= base_url('assets/img/logos-clientes/' . rawurlencode($filename)) ?>"
+                     alt="<?= esc($nombre) ?>"
                      class="max-h-14 w-auto object-contain" loading="lazy">
             </div>
             <?php endforeach; ?>
@@ -52,7 +50,7 @@
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             <?php
-            $sectores = ['Manufactura', 'Servicios', 'Propiedad Horizontal', 'Construcción', 'Comercio', 'Salud', 'Logística', 'Tecnología'];
+            $sectores = ['Servicios', 'Financiero', 'Administrativo', 'Propiedad Horizontal', 'Tienda a Tienda', 'Comercializadores', 'Mi Pymes'];
             foreach ($sectores as $s): ?>
             <div class="bg-white rounded-xl px-4 py-3 text-center text-sm font-medium text-cycloid-navy border border-gray-100">
                 <?= $s ?>
