@@ -36,12 +36,6 @@
                            class="block px-4 py-2 hover:bg-cycloid-bg hover:text-cycloid-blue transition-colors">Riesgo Psicosocial</a>
                         <a href="<?= base_url('servicios/propiedad-horizontal') ?>"
                            class="block px-4 py-2 hover:bg-cycloid-bg hover:text-cycloid-blue transition-colors">Propiedad Horizontal</a>
-                        <a href="<?= base_url('servicios/brigada-emergencia') ?>"
-                           class="block px-4 py-2 hover:bg-cycloid-bg hover:text-cycloid-blue transition-colors">Brigada de Emergencia</a>
-                        <a href="<?= base_url('servicios/auditoria-proveedores') ?>"
-                           class="block px-4 py-2 hover:bg-cycloid-bg hover:text-cycloid-blue transition-colors">Auditoría Proveedores</a>
-                        <a href="<?= base_url('servicios/vigia-sst') ?>"
-                           class="block px-4 py-2 hover:bg-cycloid-bg hover:text-cycloid-blue transition-colors">Vigía SST</a>
                     </div>
                 </div>
 
@@ -91,9 +85,6 @@
                     <a href="<?= base_url('servicios/consultoria-sst') ?>" class="block py-1 hover:text-cycloid-blue">Consultoría SG-SST</a>
                     <a href="<?= base_url('servicios/riesgo-psicosocial') ?>" class="block py-1 hover:text-cycloid-blue">Riesgo Psicosocial</a>
                     <a href="<?= base_url('servicios/propiedad-horizontal') ?>" class="block py-1 hover:text-cycloid-blue">Propiedad Horizontal</a>
-                    <a href="<?= base_url('servicios/brigada-emergencia') ?>" class="block py-1 hover:text-cycloid-blue">Brigada de Emergencia</a>
-                    <a href="<?= base_url('servicios/auditoria-proveedores') ?>" class="block py-1 hover:text-cycloid-blue">Auditoría Proveedores</a>
-                    <a href="<?= base_url('servicios/vigia-sst') ?>" class="block py-1 hover:text-cycloid-blue">Vigía SST</a>
                 </div>
             </div>
 
