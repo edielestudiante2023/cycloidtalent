@@ -34,6 +34,9 @@
                 <a href="<?= base_url('admin/galeria') ?>" class="block px-4 py-2 rounded hover:bg-blue-700 transition <?= str_starts_with(uri_string(), 'admin/galeria') ? 'bg-blue-700' : '' ?>">
                     Galería servicios
                 </a>
+                <a href="<?= base_url('admin/blog') ?>" class="block px-4 py-2 rounded hover:bg-blue-700 transition <?= str_starts_with(uri_string(), 'admin/blog') ? 'bg-blue-700' : '' ?>">
+                    Blog
+                </a>
             </nav>
             <div class="p-4 border-t border-blue-700">
                 <a href="<?= base_url('admin/logout') ?>" class="block px-4 py-2 rounded hover:bg-red-600 transition text-center">

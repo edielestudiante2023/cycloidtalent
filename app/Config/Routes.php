@@ -63,6 +63,14 @@ $routes->group('admin', ['filter' => 'auth'], static function ($routes) {
     $routes->post('galeria/guardar',       'Admin\GaleriaAdminController::guardar');
     $routes->get('galeria/eliminar/(:num)','Admin\GaleriaAdminController::eliminar/$1');
     $routes->get('galeria/toggle/(:num)',  'Admin\GaleriaAdminController::toggleActivo/$1');
+    // Blog
+    $routes->get('blog',                   'Admin\BlogAdminController::index');
+    $routes->get('blog/crear',             'Admin\BlogAdminController::crear');
+    $routes->post('blog/guardar',          'Admin\BlogAdminController::guardar');
+    $routes->get('blog/editar/(:num)',     'Admin\BlogAdminController::editar/$1');
+    $routes->post('blog/actualizar/(:num)','Admin\BlogAdminController::actualizar/$1');
+    $routes->get('blog/eliminar/(:num)',   'Admin\BlogAdminController::eliminar/$1');
+    $routes->get('blog/toggle/(:num)',     'Admin\BlogAdminController::togglePublicado/$1');
 });
 
 // Redirects 301 desde URLs de Joomla (preservar SEO)
