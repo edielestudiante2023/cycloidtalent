@@ -50,7 +50,7 @@
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             <?php
-            $sectores = ['Servicios', 'Financiero', 'Administrativo', 'Propiedad Horizontal', 'Tienda a Tienda', 'Comercializadores', 'Mi Pymes'];
+            $sectores = ['Servicios', 'Financiero', 'Administrativo', 'Propiedad Horizontal', 'Tienda a Tienda', 'Comercializadores', 'Mi Pymes', 'Tecnología'];
             foreach ($sectores as $s): ?>
             <div class="bg-white rounded-xl px-4 py-3 text-center text-sm font-medium text-cycloid-navy border border-gray-100">
                 <?= $s ?>
