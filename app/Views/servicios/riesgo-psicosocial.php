@@ -93,7 +93,7 @@
                 <?php for ($i = 1; $i <= 18; $i++): ?>
                 <img src="<?= base_url('assets/img/Portafolio RPS - ACTUALIZACIÓN 2026/' . $i . '.png') ?>"
                      alt="Portafolio RPS <?= $i ?>"
-                     class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
+                     class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500" loading="lazy"
                      :class="actual === <?= $i - 1 ?> ? 'opacity-100' : 'opacity-0'">
                 <?php endfor; ?>
 
@@ -123,13 +123,23 @@
                         class="shrink-0 w-12 h-12 sm:w-16 sm:h-16 rounded-xl overflow-hidden border-2 transition"
                         :class="actual === <?= $i - 1 ?> ? 'border-cycloid-blue' : 'border-transparent opacity-60 hover:opacity-100'">
                     <img src="<?= base_url('assets/img/Portafolio RPS - ACTUALIZACIÓN 2026/' . $i . '.png') ?>"
-                         alt="Miniatura <?= $i ?>" class="w-full h-full object-cover">
+                         alt="Miniatura <?= $i ?>" class="w-full h-full object-cover" loading="lazy">
                 </button>
                 <?php endfor; ?>
             </div>
         </div>
     </div>
 </section>
+
+<?php
+$tools = [
+    ['logo' => 'logo_psirysk.png', 'name' => 'PsyRisk', 'desc' => 'Plataforma de evaluación y análisis de batería de riesgo psicosocial laboral.'],
+    ['logo' => 'logo_rps.png', 'name' => 'Cycloid RPS', 'desc' => 'Portafolio integral de gestión de riesgo psicosocial.'],
+    ['logo' => 'psicloidmethod.png', 'name' => 'Psycloid Method', 'desc' => 'Modelo propio de análisis e intervención de batería de riesgo psicosocial.'],
+    ['logo' => 'sstrojo.png', 'name' => 'Cycloid SST', 'desc' => 'Plataforma de documentación, indicadores y trazabilidad SST.'],
+];
+?>
+<?= $this->include('partials/tools_section') ?>
 
 <?= $this->include('partials/contact_cta') ?>
 <?= $this->endSection() ?>

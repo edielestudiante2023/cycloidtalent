@@ -122,5 +122,12 @@
     </div>
 </section>
 
+<?php
+$tools = [
+    ['logo' => 'sstrojo.png', 'name' => 'Cycloid SST', 'desc' => 'Plataforma de documentación, indicadores y trazabilidad SST.'],
+];
+?>
+<?= $this->include('partials/tools_section') ?>
+
 <?= $this->include('partials/contact_cta') ?>
 <?= $this->endSection() ?>

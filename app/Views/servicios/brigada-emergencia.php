@@ -70,12 +70,19 @@
             <?php for ($i = 9; $i <= 12; $i++): ?>
             <div class="rounded-2xl overflow-hidden aspect-square bg-gray-100">
                 <img src="<?= base_url('assets/img/services/rps-2026/' . $i . '.jpg') ?>"
-                     alt="Brigada de emergencia" class="w-full h-full object-cover">
+                     alt="Brigada de emergencia" class="w-full h-full object-cover" loading="lazy">
             </div>
             <?php endfor; ?>
         </div>
     </div>
 </section>
+
+<?php
+$tools = [
+    ['logo' => 'sstrojo.png', 'name' => 'Cycloid SST', 'desc' => 'Plataforma de documentación, indicadores y trazabilidad SST.'],
+];
+?>
+<?= $this->include('partials/tools_section') ?>
 
 <?= $this->include('partials/contact_cta') ?>
 <?= $this->endSection() ?>
