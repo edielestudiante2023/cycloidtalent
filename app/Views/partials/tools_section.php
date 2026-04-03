@@ -1,3 +1,4 @@
+<?php if (empty($tools)) return; ?>
 <!-- Nuestras Herramientas -->
 <section class="py-16 bg-white border-t border-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
