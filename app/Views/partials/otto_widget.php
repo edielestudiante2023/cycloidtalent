@@ -5,7 +5,7 @@
      class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
 
     <!-- Message Bubble -->
-    <div x-show="open" x-cloak
+    <div x-show="open"
          x-transition:enter="transition ease-out duration-200"
          x-transition:enter-start="opacity-0 translate-y-2 scale-95"
          x-transition:enter-end="opacity-100 translate-y-0 scale-100"
@@ -69,23 +69,12 @@
     </div>
 
     <!-- Otto Avatar Button -->
-    <button @click="open = !open"
-            x-show="shown" x-cloak
-            x-transition:enter="transition ease-out duration-300"
-            x-transition:enter-start="opacity-0 translate-y-4 scale-75"
-            x-transition:enter-end="opacity-100 translate-y-0 scale-100"
-            class="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-cycloid-navy shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 flex items-center justify-center ring-2 ring-white overflow-hidden"
+    <button x-show="shown"
+            @click="open = !open"
+            class="w-14 h-14 sm:w-16 sm:h-16 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 ring-2 ring-white"
             aria-label="Abrir asistente Otto">
-
-        <!-- Pulse ring -->
-        <span class="absolute inset-0 rounded-full bg-cycloid-blue/30 animate-ping"
-              x-show="!open"
-              style="animation-duration: 3s;"></span>
-
-        <!-- Otto image -->
         <img src="<?= base_url('img/otto.png') ?>"
              alt="Otto"
-             class="w-full h-full rounded-full object-cover relative z-10 transition-transform"
-             :class="open ? 'scale-90' : ''">
+             class="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover">
     </button>
 </div>
