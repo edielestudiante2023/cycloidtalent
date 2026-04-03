@@ -41,7 +41,7 @@ class ContactoAdminController extends BaseController
     public function eliminar(int $id)
     {
         $this->contactoModel->delete($id);
-        return redirect()->to('/admin/contacto')->with('success', 'Mensaje eliminado.');
+        return redirect()->to(base_url('admin/contacto'))->with('success', 'Mensaje eliminado.');
     }
 
     public function toggleLeido(int $id)
@@ -52,6 +52,6 @@ class ContactoAdminController extends BaseController
             $this->contactoModel->update($id, ['leido' => $mensaje['leido'] ? 0 : 1]);
         }
 
-        return redirect()->to('/admin/contacto');
+        return redirect()->to(base_url('admin/contacto'));
     }
 }

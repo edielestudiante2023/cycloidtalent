@@ -2,14 +2,14 @@
 
 <?= $this->section('content') ?>
 <div class="max-w-xl">
-    <a href="/admin/usuarios" class="text-blue-600 hover:underline text-sm mb-4 inline-block">&larr; Volver a usuarios</a>
+    <a href="<?= base_url('admin/usuarios') ?>" class="text-blue-600 hover:underline text-sm mb-4 inline-block">&larr; Volver a usuarios</a>
 
     <div class="bg-white rounded-lg shadow p-6">
         <h3 class="text-lg font-semibold mb-6">
             <?= $usuario ? 'Editar usuario' : 'Crear usuario' ?>
         </h3>
 
-        <form action="<?= $usuario ? '/admin/usuarios/actualizar/' . $usuario['id'] : '/admin/usuarios/guardar' ?>" method="POST">
+        <form action="<?= $usuario ? base_url('admin/usuarios/actualizar/' . $usuario['id']) : base_url('admin/usuarios/guardar') ?>" method="POST">
             <?= csrf_field() ?>
 
             <div class="space-y-4">
@@ -52,7 +52,7 @@
 
             <div class="mt-6">
                 <button type="submit"
-                    class="bg-[#0345BF] text-white px-6 py-2 rounded-lg hover:bg-blue-800 transition font-semibold">
+                    style="background:#0345BF;color:#fff;padding:0.5rem 1.5rem;border-radius:0.5rem;font-weight:600;border:none;cursor:pointer;"
                     <?= $usuario ? 'Actualizar' : 'Crear usuario' ?>
                 </button>
             </div>

@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
 <div class="max-w-3xl">
-    <a href="/admin/contacto" class="text-blue-600 hover:underline text-sm mb-4 inline-block">&larr; Volver a mensajes</a>
+    <a href="<?= base_url('admin/contacto') ?>" class="text-blue-600 hover:underline text-sm mb-4 inline-block">&larr; Volver a mensajes</a>
 
     <div class="bg-white rounded-lg shadow">
         <div class="px-6 py-4 border-b border-gray-200">
@@ -54,10 +54,10 @@
 
         <div class="px-6 py-4 border-t border-gray-200 flex space-x-3">
             <a href="mailto:<?= esc($mensaje['email']) ?>?subject=Re: <?= esc($mensaje['asunto']) ?>"
-               class="bg-[#0345BF] text-white px-4 py-2 rounded hover:bg-blue-800 transition text-sm">
+               style="background:#0345BF;color:#fff;padding:0.5rem 1rem;border-radius:0.25rem;font-size:0.875rem;display:inline-block;text-decoration:none;">
                 Responder por email
             </a>
-            <a href="/admin/contacto/eliminar/<?= $mensaje['id'] ?>"
+            <a href="<?= base_url('admin/contacto/eliminar/') ?><?= $mensaje['id'] ?>"
                onclick="return confirm('¿Eliminar este mensaje?')"
                class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition text-sm">
                 Eliminar

@@ -16,24 +16,24 @@
 <body class="bg-gray-100 font-sans antialiased" x-data="{ sidebarOpen: true }">
     <div class="flex">
         <!-- Sidebar -->
-        <aside class="sidebar w-64 bg-[#0345BF] text-white flex-shrink-0 flex flex-col" x-show="sidebarOpen">
+        <aside class="sidebar text-white" style="width:16rem;background:#0345BF;flex-shrink:0;display:flex;flex-direction:column;" x-show="sidebarOpen">
             <div class="p-6 border-b border-blue-700">
                 <h1 class="text-xl font-bold">Cycloid Admin</h1>
                 <p class="text-blue-200 text-sm mt-1"><?= session()->get('usuario_nombre') ?></p>
             </div>
             <nav class="flex-1 p-4 space-y-1">
-                <a href="/admin" class="block px-4 py-2 rounded hover:bg-blue-700 transition <?= uri_string() === 'admin' ? 'bg-blue-700' : '' ?>">
+                <a href="<?= base_url('admin') ?>" class="block px-4 py-2 rounded hover:bg-blue-700 transition <?= uri_string() === 'admin' ? 'bg-blue-700' : '' ?>">
                     Dashboard
                 </a>
-                <a href="/admin/contacto" class="block px-4 py-2 rounded hover:bg-blue-700 transition <?= str_starts_with(uri_string(), 'admin/contacto') ? 'bg-blue-700' : '' ?>">
+                <a href="<?= base_url('admin/contacto') ?>" class="block px-4 py-2 rounded hover:bg-blue-700 transition <?= str_starts_with(uri_string(), 'admin/contacto') ? 'bg-blue-700' : '' ?>">
                     Mensajes de contacto
                 </a>
-                <a href="/admin/usuarios" class="block px-4 py-2 rounded hover:bg-blue-700 transition <?= str_starts_with(uri_string(), 'admin/usuarios') ? 'bg-blue-700' : '' ?>">
+                <a href="<?= base_url('admin/usuarios') ?>" class="block px-4 py-2 rounded hover:bg-blue-700 transition <?= str_starts_with(uri_string(), 'admin/usuarios') ? 'bg-blue-700' : '' ?>">
                     Usuarios
                 </a>
             </nav>
             <div class="p-4 border-t border-blue-700">
-                <a href="/admin/logout" class="block px-4 py-2 rounded hover:bg-red-600 transition text-center">
+                <a href="<?= base_url('admin/logout') ?>" class="block px-4 py-2 rounded hover:bg-red-600 transition text-center">
                     Cerrar sesión
                 </a>
             </div>

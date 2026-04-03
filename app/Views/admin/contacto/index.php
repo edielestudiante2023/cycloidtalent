@@ -35,11 +35,11 @@
                             <td class="px-6 py-4"><?= esc($m['asunto']) ?></td>
                             <td class="px-6 py-4 text-gray-500"><?= date('d/m/Y H:i', strtotime($m['created_at'])) ?></td>
                             <td class="px-6 py-4 space-x-2">
-                                <a href="/admin/contacto/<?= $m['id'] ?>" class="text-blue-600 hover:underline">Ver</a>
-                                <a href="/admin/contacto/toggle/<?= $m['id'] ?>" class="text-yellow-600 hover:underline">
+                                <a href="<?= base_url('admin/contacto/') ?><?= $m['id'] ?>" class="text-blue-600 hover:underline">Ver</a>
+                                <a href="<?= base_url('admin/contacto/') ?>toggle/<?= $m['id'] ?>" class="text-yellow-600 hover:underline">
                                     <?= $m['leido'] ? 'No leído' : 'Leído' ?>
                                 </a>
-                                <a href="/admin/contacto/eliminar/<?= $m['id'] ?>"
+                                <a href="<?= base_url('admin/contacto/') ?>eliminar/<?= $m['id'] ?>"
                                    onclick="return confirm('¿Eliminar este mensaje?')"
                                    class="text-red-600 hover:underline">Eliminar</a>
                             </td>

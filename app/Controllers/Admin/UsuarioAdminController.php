@@ -53,7 +53,7 @@ class UsuarioAdminController extends BaseController
             'activo'   => 1,
         ]);
 
-        return redirect()->to('/admin/usuarios')->with('success', 'Usuario creado.');
+        return redirect()->to(base_url('admin/usuarios'))->with('success', 'Usuario creado.');
     }
 
     public function editar(int $id)
@@ -94,24 +94,24 @@ class UsuarioAdminController extends BaseController
         }
 
         $this->usuarioModel->update($id, $data);
-        return redirect()->to('/admin/usuarios')->with('success', 'Usuario actualizado.');
+        return redirect()->to(base_url('admin/usuarios'))->with('success', 'Usuario actualizado.');
     }
 
     public function eliminar(int $id)
     {
         // No permitir auto-eliminación
         if ((int) session()->get('usuario_id') === $id) {
-            return redirect()->to('/admin/usuarios')->with('error', 'No puedes eliminar tu propia cuenta.');
+            return redirect()->to(base_url('admin/usuarios'))->with('error', 'No puedes eliminar tu propia cuenta.');
         }
 
         $this->usuarioModel->delete($id);
-        return redirect()->to('/admin/usuarios')->with('success', 'Usuario eliminado.');
+        return redirect()->to(base_url('admin/usuarios'))->with('success', 'Usuario eliminado.');
     }
 
     public function toggleActivo(int $id)
     {
         if ((int) session()->get('usuario_id') === $id) {
-            return redirect()->to('/admin/usuarios')->with('error', 'No puedes desactivar tu propia cuenta.');
+            return redirect()->to(base_url('admin/usuarios'))->with('error', 'No puedes desactivar tu propia cuenta.');
         }
 
         $usuario = $this->usuarioModel->find($id);
@@ -120,6 +120,6 @@ class UsuarioAdminController extends BaseController
             $this->usuarioModel->update($id, ['activo' => $usuario['activo'] ? 0 : 1]);
         }
 
-        return redirect()->to('/admin/usuarios');
+        return redirect()->to(base_url('admin/usuarios'));
     }
 }

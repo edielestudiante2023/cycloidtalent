@@ -10,7 +10,7 @@ class AuthController extends BaseController
     public function login()
     {
         if (session()->get('usuario_id')) {
-            return redirect()->to('/admin');
+            return redirect()->to(base_url('admin'));
         }
 
         return view('admin/auth/login', [
@@ -45,12 +45,12 @@ class AuthController extends BaseController
         // Actualizar último login
         $usuarioModel->update($usuario['id'], ['ultimo_login' => date('Y-m-d H:i:s')]);
 
-        return redirect()->to('/admin');
+        return redirect()->to(base_url('admin'));
     }
 
     public function logout()
     {
         session()->destroy();
-        return redirect()->to('/admin/login');
+        return redirect()->to(base_url('admin/login'));
     }
 }

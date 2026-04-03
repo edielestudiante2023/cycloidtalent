@@ -24,7 +24,7 @@
                 </div>
             <?php endif; ?>
 
-            <form action="/admin/login" method="POST">
+            <form action="<?= base_url('admin/login') ?>" method="POST">
                 <?= csrf_field() ?>
 
                 <div class="mb-4">
@@ -40,7 +40,7 @@
                 </div>
 
                 <button type="submit"
-                    class="w-full bg-[#0345BF] text-white py-2 px-4 rounded-lg hover:bg-blue-800 transition font-semibold">
+                    style="width:100%;background:#0345BF;color:#fff;padding:0.5rem 1rem;border-radius:0.5rem;font-weight:600;border:none;cursor:pointer;">
                     Iniciar sesión
                 </button>
             </form>

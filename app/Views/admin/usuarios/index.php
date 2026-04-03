@@ -4,7 +4,7 @@
 <div class="bg-white rounded-lg shadow">
     <div class="px-6 py-4 border-b border-gray-200 flex items-center justify-between">
         <h3 class="text-lg font-semibold">Usuarios</h3>
-        <a href="/admin/usuarios/crear" class="bg-[#0345BF] text-white px-4 py-2 rounded hover:bg-blue-800 transition text-sm">
+        <a href="<?= base_url('admin/usuarios/') ?>crear" style="background:#0345BF;color:#fff;padding:0.5rem 1rem;border-radius:0.25rem;font-size:0.875rem;">
             + Nuevo usuario
         </a>
     </div>
@@ -40,11 +40,11 @@
                             <?= $u['ultimo_login'] ? date('d/m/Y H:i', strtotime($u['ultimo_login'])) : 'Nunca' ?>
                         </td>
                         <td class="px-6 py-4 space-x-2">
-                            <a href="/admin/usuarios/editar/<?= $u['id'] ?>" class="text-blue-600 hover:underline">Editar</a>
-                            <a href="/admin/usuarios/toggle/<?= $u['id'] ?>" class="text-yellow-600 hover:underline">
+                            <a href="<?= base_url('admin/usuarios/') ?>editar/<?= $u['id'] ?>" class="text-blue-600 hover:underline">Editar</a>
+                            <a href="<?= base_url('admin/usuarios/') ?>toggle/<?= $u['id'] ?>" class="text-yellow-600 hover:underline">
                                 <?= $u['activo'] ? 'Desactivar' : 'Activar' ?>
                             </a>
-                            <a href="/admin/usuarios/eliminar/<?= $u['id'] ?>"
+                            <a href="<?= base_url('admin/usuarios/') ?>eliminar/<?= $u['id'] ?>"
                                onclick="return confirm('¿Eliminar este usuario?')"
                                class="text-red-600 hover:underline">Eliminar</a>
                         </td>
