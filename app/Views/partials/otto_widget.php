@@ -2,7 +2,7 @@
 <div x-data="{ open: false, shown: false }"
      x-init="setTimeout(() => shown = true, 1500)"
      x-cloak
-     class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+     style="position:fixed;bottom:24px;right:24px;z-index:50;display:flex;flex-direction:column;align-items:flex-end;gap:12px;"
 
     <!-- Message Bubble -->
     <div x-show="open"
@@ -71,10 +71,10 @@
     <!-- Otto Avatar Button -->
     <button x-show="shown"
             @click="open = !open"
-            class="w-14 h-14 sm:w-16 sm:h-16 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 ring-2 ring-white"
+            style="width:64px;height:64px;border-radius:50%;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.25);border:2px solid #fff;cursor:pointer;padding:0;background:none;"
             aria-label="Abrir asistente Otto">
         <img src="<?= base_url('img/otto.png') ?>"
              alt="Otto"
-             class="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover">
+             style="width:64px;height:64px;border-radius:50%;object-fit:cover;display:block;">
     </button>
 </div>
