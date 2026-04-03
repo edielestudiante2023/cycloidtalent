@@ -55,6 +55,18 @@
                                 <?php endif; ?>
                             </div>
                             <div>
+                                <label class="block text-sm font-medium text-cycloid-text mb-1">Email *</label>
+                                <input type="email" name="email" value="<?= old('email') ?>"
+                                       class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-cycloid-blue <?= isset($errors['email']) ? 'border-red-400' : '' ?>"
+                                       placeholder="tu@email.com">
+                                <?php if (isset($errors['email'])): ?>
+                                <p class="text-red-500 text-xs mt-1"><?= $errors['email'] ?></p>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+                            <div>
                                 <label class="block text-sm font-medium text-cycloid-text mb-1">Empresa *</label>
                                 <input type="text" name="empresa" value="<?= old('empresa') ?>"
                                        class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-cycloid-blue <?= isset($errors['empresa']) ? 'border-red-400' : '' ?>"
@@ -63,9 +75,6 @@
                                 <p class="text-red-500 text-xs mt-1"><?= $errors['empresa'] ?></p>
                                 <?php endif; ?>
                             </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
                             <div>
                                 <label class="block text-sm font-medium text-cycloid-text mb-1">Teléfono *</label>
                                 <input type="tel" name="telefono" value="<?= old('telefono') ?>"

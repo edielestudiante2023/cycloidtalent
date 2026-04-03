@@ -2,15 +2,16 @@
 
 namespace App\Controllers;
 
-use CodeIgniter\Controller;
+use App\Models\ContactoModel;
 
-class ContactoController extends Controller
+class ContactoController extends BaseController
 {
     public function index()
     {
         return view('contacto/index', [
             'title'       => 'Contacto',
-            'description' => 'Contáctanos para una asesoría en SST, Riesgo Psicosocial o cualquiera de nuestros servicios.',
+            'description' => 'Contáctanos para una asesoría en SST, Baterías de Riesgo Psicosocial o cualquiera de nuestros servicios en Colombia.',
+            'canonical'   => base_url('contacto'),
         ]);
     }
 
@@ -18,6 +19,7 @@ class ContactoController extends Controller
     {
         $rules = [
             'nombre'   => 'required|min_length[2]',
+            'email'    => 'required|valid_email',
             'empresa'  => 'required|min_length[2]',
             'telefono' => 'required|min_length[7]',
             'servicio' => 'required',
@@ -29,49 +31,67 @@ class ContactoController extends Controller
         }
 
         $nombre   = $this->request->getPost('nombre');
+        $email    = $this->request->getPost('email');
         $empresa  = $this->request->getPost('empresa');
         $telefono = $this->request->getPost('telefono');
         $servicio = $this->request->getPost('servicio');
         $mensaje  = $this->request->getPost('mensaje');
 
-        $apiKey = env('SENDGRID_API_KEY');
-        $body   = json_encode([
-            'personalizations' => [[
-                'to'      => [['email' => 'diana.cuestas@cycloidtalent.com']],
-                'subject' => "Nuevo contacto web — {$nombre} ({$empresa})",
-            ]],
-            'from'    => ['email' => 'noreply@cycloidtalent.com', 'name' => 'Cycloid Talent Web'],
-            'content' => [[
-                'type'  => 'text/html',
-                'value' => "
-                    <h2>Nuevo mensaje desde cycloidtalent.com</h2>
-                    <p><strong>Nombre:</strong> {$nombre}</p>
-                    <p><strong>Empresa:</strong> {$empresa}</p>
-                    <p><strong>Teléfono:</strong> {$telefono}</p>
-                    <p><strong>Servicio de interés:</strong> {$servicio}</p>
-                    <p><strong>Mensaje:</strong><br>{$mensaje}</p>
-                ",
-            ]],
+        // 1) Guardar en base de datos (siempre)
+        $contactoModel = new ContactoModel();
+        $guardado = $contactoModel->insert([
+            'nombre'     => $nombre,
+            'email'      => $email,
+            'telefono'   => $telefono,
+            'empresa'    => $empresa,
+            'asunto'     => $servicio,
+            'mensaje'    => $mensaje,
+            'ip_address' => $this->request->getIPAddress(),
         ]);
 
-        $ch = curl_init('https://api.sendgrid.com/v3/mail/send');
-        curl_setopt_array($ch, [
-            CURLOPT_POST           => true,
-            CURLOPT_POSTFIELDS     => $body,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_HTTPHEADER     => [
-                "Authorization: Bearer {$apiKey}",
-                'Content-Type: application/json',
-            ],
-        ]);
-        $response   = curl_exec($ch);
-        $httpStatus = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        curl_close($ch);
-
-        if ($httpStatus === 202) {
-            return redirect()->to(base_url('contacto'))->with('success', '¡Mensaje enviado! Te contactaremos pronto.');
+        if (! $guardado) {
+            return redirect()->back()->withInput()->with('error', 'Hubo un problema al guardar el mensaje. Por favor inténtalo de nuevo.');
         }
 
-        return redirect()->back()->withInput()->with('error', 'Hubo un problema al enviar el mensaje. Por favor inténtalo de nuevo.');
+        // 2) Intentar enviar email por SendGrid (complemento)
+        $apiKey = env('SENDGRID_API_KEY');
+        if (! empty($apiKey)) {
+            $body = json_encode([
+                'personalizations' => [[
+                    'to'      => [['email' => 'diana.cuestas@cycloidtalent.com']],
+                    'cc'      => [['email' => 'edison.cuervo@cycloidtalent.com']],
+                    'subject' => "Nuevo contacto web — {$nombre} ({$empresa})",
+                ]],
+                'from'    => ['email' => 'noreply@cycloidtalent.com', 'name' => 'Cycloid Talent Web'],
+                'reply_to' => ['email' => $email, 'name' => $nombre],
+                'content' => [[
+                    'type'  => 'text/html',
+                    'value' => "
+                        <h2>Nuevo mensaje desde cycloidtalent.com</h2>
+                        <p><strong>Nombre:</strong> " . esc($nombre) . "</p>
+                        <p><strong>Email:</strong> " . esc($email) . "</p>
+                        <p><strong>Empresa:</strong> " . esc($empresa) . "</p>
+                        <p><strong>Teléfono:</strong> " . esc($telefono) . "</p>
+                        <p><strong>Servicio de interés:</strong> " . esc($servicio) . "</p>
+                        <p><strong>Mensaje:</strong><br>" . nl2br(esc($mensaje)) . "</p>
+                    ",
+                ]],
+            ]);
+
+            $ch = curl_init('https://api.sendgrid.com/v3/mail/send');
+            curl_setopt_array($ch, [
+                CURLOPT_POST           => true,
+                CURLOPT_POSTFIELDS     => $body,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_HTTPHEADER     => [
+                    "Authorization: Bearer {$apiKey}",
+                    'Content-Type: application/json',
+                ],
+            ]);
+            curl_exec($ch);
+            curl_close($ch);
+        }
+
+        return redirect()->to(base_url('contacto'))->with('success', '¡Mensaje enviado! Te contactaremos pronto.');
     }
 }

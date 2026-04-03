@@ -111,32 +111,32 @@
             <a href="<?= base_url('clientes') ?>"
                class="grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300">
                 <img src="<?= base_url('assets/img/clients/meltec.png') ?>"
-                     alt="Meltec" class="h-10 w-auto object-contain">
+                     alt="Meltec" class="h-10 w-auto object-contain" loading="lazy">
             </a>
             <a href="<?= base_url('clientes') ?>"
                class="grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300">
                 <img src="<?= base_url('assets/img/clients/polux.jpg') ?>"
-                     alt="Polux" class="h-10 w-auto object-contain">
+                     alt="Polux" class="h-10 w-auto object-contain" loading="lazy">
             </a>
             <a href="<?= base_url('clientes') ?>"
                class="grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300">
                 <img src="<?= base_url('assets/img/clients/client1.png') ?>"
-                     alt="Cliente" class="h-10 w-auto object-contain">
+                     alt="Cliente" class="h-10 w-auto object-contain" loading="lazy">
             </a>
             <a href="<?= base_url('clientes') ?>"
                class="grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300">
                 <img src="<?= base_url('assets/img/clients/client2.png') ?>"
-                     alt="Cliente" class="h-10 w-auto object-contain">
+                     alt="Cliente" class="h-10 w-auto object-contain" loading="lazy">
             </a>
             <a href="<?= base_url('clientes') ?>"
                class="grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300">
                 <img src="<?= base_url('assets/img/clients/client3.png') ?>"
-                     alt="Cliente" class="h-10 w-auto object-contain">
+                     alt="Cliente" class="h-10 w-auto object-contain" loading="lazy">
             </a>
             <a href="<?= base_url('clientes') ?>"
                class="grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300">
                 <img src="<?= base_url('assets/img/clients/client4.png') ?>"
-                     alt="Cliente" class="h-10 w-auto object-contain">
+                     alt="Cliente" class="h-10 w-auto object-contain" loading="lazy">
             </a>
         </div>
     </div>
@@ -177,16 +177,16 @@
             <div class="grid grid-cols-2 gap-4">
                 <img src="<?= base_url('assets/img/services/rps-2026/1.jpg') ?>"
                      alt="Cycloid Talent en acción"
-                     class="rounded-2xl object-cover w-full h-48 shadow-md">
+                     class="rounded-2xl object-cover w-full h-48 shadow-md" loading="lazy">
                 <img src="<?= base_url('assets/img/services/rps-2026/2.jpg') ?>"
                      alt="Capacitación SST"
-                     class="rounded-2xl object-cover w-full h-48 shadow-md mt-6">
+                     class="rounded-2xl object-cover w-full h-48 shadow-md mt-6" loading="lazy">
                 <img src="<?= base_url('assets/img/services/rps-2026/3.jpg') ?>"
                      alt="Brigada de emergencia"
-                     class="rounded-2xl object-cover w-full h-48 shadow-md">
+                     class="rounded-2xl object-cover w-full h-48 shadow-md" loading="lazy">
                 <img src="<?= base_url('assets/img/services/rps-2026/4.jpg') ?>"
                      alt="Consultoría SST"
-                     class="rounded-2xl object-cover w-full h-48 shadow-md mt-6">
+                     class="rounded-2xl object-cover w-full h-48 shadow-md mt-6" loading="lazy">
             </div>
         </div>
     </div>

@@ -21,7 +21,7 @@
                         <img src="<?= base_url($a['imagen']) ?>"
                              alt="<?= esc($a['titulo']) ?>"
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                             onerror="this.style.display='none'">
+                             loading="lazy" onerror="this.style.display='none'">
                     </div>
                 </a>
                 <div class="p-4 sm:p-6">

@@ -37,7 +37,7 @@
             <div class="flex items-center justify-center p-6 bg-cycloid-bg rounded-2xl border border-gray-100 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 min-h-[100px]">
                 <img src="<?= base_url('assets/img/clients/' . $c['logo']) ?>"
                      alt="<?= $c['nombre'] ?>"
-                     class="max-h-14 w-auto object-contain">
+                     class="max-h-14 w-auto object-contain" loading="lazy">
             </div>
             <?php endforeach; ?>
         </div>

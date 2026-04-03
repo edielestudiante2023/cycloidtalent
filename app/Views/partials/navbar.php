@@ -55,8 +55,7 @@
                    class="hover:text-cycloid-blue transition-colors">Contacto</a>
 
                 <!-- Acceder button -->
-                <a href="https://dashboard.cycloidtalent.com"
-                   target="_blank" rel="noopener"
+                <a href="<?= base_url('admin/login') ?>"
                    class="bg-cycloid-blue text-white px-4 py-2 rounded-xl text-sm font-semibold hover:bg-blue-700 transition-colors">
                     Acceder
                 </a>
@@ -101,7 +100,7 @@
             <a href="<?= base_url('clientes') ?>" class="block py-2 hover:text-cycloid-blue">Clientes</a>
             <a href="<?= base_url('blog') ?>" class="block py-2 hover:text-cycloid-blue">Blog</a>
             <a href="<?= base_url('contacto') ?>" class="block py-2 hover:text-cycloid-blue">Contacto</a>
-            <a href="https://dashboard.cycloidtalent.com" target="_blank"
+            <a href="<?= base_url('admin/login') ?>"
                class="block mt-2 bg-cycloid-blue text-white text-center px-4 py-2 rounded-xl font-semibold">
                 Acceder
             </a>

@@ -2,9 +2,7 @@
 
 namespace App\Controllers;
 
-use CodeIgniter\Controller;
-
-class LegalController extends Controller
+class LegalController extends BaseController
 {
     public function reglamentoInterno()
     {

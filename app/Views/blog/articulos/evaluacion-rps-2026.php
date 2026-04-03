@@ -42,7 +42,7 @@
                 <?php for ($i = 1; $i <= 4; $i++): ?>
                 <div class="rounded-xl overflow-hidden aspect-square bg-gray-100">
                     <img src="<?= base_url('assets/img/services/rps-2026/' . $i . '.jpg') ?>"
-                         alt="RPS 2026" class="w-full h-full object-cover">
+                         alt="RPS 2026" class="w-full h-full object-cover" loading="lazy">
                 </div>
                 <?php endfor; ?>
             </div>

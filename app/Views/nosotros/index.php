@@ -93,7 +93,7 @@
                 <div class="w-28 h-28 sm:w-36 sm:h-36 mx-auto mb-4 rounded-full overflow-hidden border-4 border-cycloid-bg shadow-md">
                     <img src="<?= base_url('assets/img/team/' . $m['foto']) ?>"
                          alt="<?= $m['nombre'] ?>"
-                         class="w-full h-full object-cover">
+                         class="w-full h-full object-cover" loading="lazy">
                 </div>
                 <h3 class="font-bold text-cycloid-navy text-lg"><?= $m['nombre'] ?></h3>
                 <p class="text-cycloid-blue text-sm font-medium mt-1"><?= $m['cargo'] ?></p>

@@ -6,6 +6,7 @@
     <title><?= $title ?? 'Documento Legal' ?> | Cycloid Talent</title>
     <meta name="description" content="<?= $description ?? 'Documentos legales de Cycloid Talent SAS.' ?>">
     <meta name="robots" content="noindex">
+    <link rel="canonical" href="<?= $canonical ?? current_url() ?>">
 
     <!-- Inter font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +17,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/output.css') ?>">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="<?= base_url('assets/img/logos/cycloid-logo-azul.png') ?>">
+    <link rel="icon" type="image/png" href="<?= base_url('img/otto-favicon.png') ?>">
 
     <!-- PWA -->
     <link rel="manifest" href="<?= base_url('manifest.json') ?>">

@@ -2,15 +2,14 @@
 
 namespace App\Controllers;
 
-use CodeIgniter\Controller;
-
-class NosotrosController extends Controller
+class NosotrosController extends BaseController
 {
     public function index()
     {
         $data = [
             'title'       => 'Nosotros',
-            'description' => 'Conoce al equipo de Cycloid Talent, nuestra misión, visión y principios.',
+            'description' => 'Conoce al equipo de Cycloid Talent, empresa de consultoría SST en Colombia. Misión, visión y principios.',
+            'canonical'   => base_url('nosotros'),
         ];
         return view('nosotros/index', $data);
     }

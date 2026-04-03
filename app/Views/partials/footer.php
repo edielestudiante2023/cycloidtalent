@@ -5,7 +5,7 @@
             <!-- Brand -->
             <div class="md:col-span-1">
                 <img src="<?= base_url('assets/img/logos/cycloid-logo-blanco.png') ?>"
-                     alt="Cycloid Talent" class="h-10 w-auto mb-4">
+                     alt="Cycloid Talent" class="h-10 w-auto mb-4" loading="lazy">
                 <p class="text-sm text-gray-400 leading-relaxed">
                     Consultoría en SST, Riesgo Psicosocial y Seguridad Laboral para empresas colombianas.
                 </p>

@@ -25,6 +25,9 @@ $routes->get('/servicios/vigia-sst',            'ServiciosController::vigilaSst'
 $routes->get('/blog',            'BlogController::index');
 $routes->get('/blog/(:segment)', 'BlogController::articulo/$1');
 
+// Sitemap
+$routes->get('/sitemap.xml', 'SitemapController::index');
+
 // Contacto
 $routes->get('/contacto',        'ContactoController::index');
 $routes->post('/contacto/enviar','ContactoController::enviar');
@@ -32,6 +35,29 @@ $routes->post('/contacto/enviar','ContactoController::enviar');
 // Legal
 $routes->get('/legal/reglamento-interno', 'LegalController::reglamentoInterno');
 $routes->get('/legal/reglamento-higiene', 'LegalController::reglamentoHigiene');
+
+// Admin — Login (sin auth)
+$routes->get('/admin/login',  'Admin\AuthController::login');
+$routes->post('/admin/login', 'Admin\AuthController::attemptLogin');
+$routes->get('/admin/logout', 'Admin\AuthController::logout');
+
+// Admin — Protegido con auth
+$routes->group('admin', ['filter' => 'auth'], static function ($routes) {
+    $routes->get('/',                       'Admin\DashboardController::index');
+    // Contacto
+    $routes->get('contacto',               'Admin\ContactoAdminController::index');
+    $routes->get('contacto/(:num)',        'Admin\ContactoAdminController::ver/$1');
+    $routes->get('contacto/eliminar/(:num)', 'Admin\ContactoAdminController::eliminar/$1');
+    $routes->get('contacto/toggle/(:num)', 'Admin\ContactoAdminController::toggleLeido/$1');
+    // Usuarios
+    $routes->get('usuarios',               'Admin\UsuarioAdminController::index');
+    $routes->get('usuarios/crear',         'Admin\UsuarioAdminController::crear');
+    $routes->post('usuarios/guardar',      'Admin\UsuarioAdminController::guardar');
+    $routes->get('usuarios/editar/(:num)', 'Admin\UsuarioAdminController::editar/$1');
+    $routes->post('usuarios/actualizar/(:num)', 'Admin\UsuarioAdminController::actualizar/$1');
+    $routes->get('usuarios/eliminar/(:num)', 'Admin\UsuarioAdminController::eliminar/$1');
+    $routes->get('usuarios/toggle/(:num)', 'Admin\UsuarioAdminController::toggleActivo/$1');
+});
 
 // Redirects 301 desde URLs de Joomla (preservar SEO)
 $routes->get('/inicio/mision-y-vision',        static fn() => redirect()->to('/nosotros', 301));
