@@ -131,6 +131,28 @@
     </div>
 </section>
 
+<?php if (! empty($galeria)): ?>
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-bold text-cycloid-navy mb-8 text-center">Algunos de nuestros servicios</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;">
+            <?php foreach ($galeria as $foto): ?>
+            <div class="rounded-2xl overflow-hidden shadow-sm border border-gray-100" style="background:#fff;">
+                <div style="aspect-ratio:4/3;overflow:hidden;">
+                    <img src="<?= base_url('assets/img/servicios/' . $foto['imagen']) ?>"
+                         alt="<?= esc($foto['titulo']) ?>"
+                         style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                </div>
+                <div style="padding:1rem;">
+                    <p class="text-sm font-semibold text-cycloid-navy"><?= esc($foto['titulo']) ?></p>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
 <?php $this->setVar('tools', [
     ['logo' => 'logo_psirysk.png', 'name' => 'PsyRisk', 'desc' => 'Plataforma de evaluación y análisis de batería de riesgo psicosocial laboral.'],
     ['logo' => 'logo_rps.png', 'name' => 'Cycloid RPS', 'desc' => 'Portafolio integral de gestión de riesgo psicosocial.'],

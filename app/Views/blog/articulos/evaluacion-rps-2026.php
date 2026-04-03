@@ -37,16 +37,6 @@
                 <li>Mayores exigencias en los <strong class="text-cycloid-navy">planes de intervención</strong> y evidencia de su implementación.</li>
             </ul>
 
-            <h2 class="text-2xl font-bold text-cycloid-navy mt-10 mb-4">Galería del portafolio RPS 2026</h2>
-            <div class="grid grid-cols-2 gap-3 not-prose">
-                <?php for ($i = 1; $i <= 4; $i++): ?>
-                <div class="rounded-xl overflow-hidden aspect-square bg-gray-100">
-                    <img src="<?= base_url('assets/img/services/rps-2026/' . $i . '.jpg') ?>"
-                         alt="RPS 2026" class="w-full h-full object-cover" loading="lazy">
-                </div>
-                <?php endfor; ?>
-            </div>
-
             <h2 class="text-2xl font-bold text-cycloid-navy mt-10 mb-4">Nuestro proceso actualizado 2026</h2>
             <div class="space-y-4 not-prose">
                 <?php

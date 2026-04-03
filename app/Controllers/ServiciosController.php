@@ -27,10 +27,13 @@ class ServiciosController extends BaseController
         $title = 'Batería de Riesgo Psicosocial';
         $desc  = 'Batería de Riesgo Psicosocial en Colombia. Evaluación con instrumentos del Ministerio del Trabajo según Resolución 2646 de 2008 y 2764 de 2022.';
 
+        $galeriaModel = new \App\Models\GaleriaServicioModel();
+
         return view('servicios/riesgo-psicosocial', [
             'title'       => $title,
             'description' => $desc,
             'canonical'   => $url,
+            'galeria'     => $galeriaModel->getPorServicio('riesgo-psicosocial'),
             'jsonld'      => seo_graph_jsonld([
                 seo_service_jsonld($title, $desc, $url),
                 seo_breadcrumb_jsonld([['Inicio', base_url('/')], [$title, $url]]),

@@ -92,10 +92,6 @@
                                     <option value="Consultoría SG-SST" <?= old('servicio') === 'Consultoría SG-SST' ? 'selected' : '' ?>>Consultoría SG-SST</option>
                                     <option value="Riesgo Psicosocial" <?= old('servicio') === 'Riesgo Psicosocial' ? 'selected' : '' ?>>Evaluación Riesgo Psicosocial</option>
                                     <option value="Propiedad Horizontal" <?= old('servicio') === 'Propiedad Horizontal' ? 'selected' : '' ?>>SST Propiedad Horizontal</option>
-                                    <option value="Brigada de Emergencia" <?= old('servicio') === 'Brigada de Emergencia' ? 'selected' : '' ?>>Brigada de Emergencia</option>
-                                    <option value="Auditoría Proveedores" <?= old('servicio') === 'Auditoría Proveedores' ? 'selected' : '' ?>>Auditoría a Proveedores</option>
-                                    <option value="Vigía SST" <?= old('servicio') === 'Vigía SST' ? 'selected' : '' ?>>Vigía SST</option>
-                                    <option value="Otro" <?= old('servicio') === 'Otro' ? 'selected' : '' ?>>Otro</option>
                                 </select>
                                 <?php if (isset($errors['servicio'])): ?>
                                 <p class="text-red-500 text-xs mt-1"><?= $errors['servicio'] ?></p>

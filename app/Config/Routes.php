@@ -57,6 +57,12 @@ $routes->group('admin', ['filter' => 'auth'], static function ($routes) {
     $routes->post('usuarios/actualizar/(:num)', 'Admin\UsuarioAdminController::actualizar/$1');
     $routes->get('usuarios/eliminar/(:num)', 'Admin\UsuarioAdminController::eliminar/$1');
     $routes->get('usuarios/toggle/(:num)', 'Admin\UsuarioAdminController::toggleActivo/$1');
+    // Galería de servicios
+    $routes->get('galeria',                'Admin\GaleriaAdminController::index');
+    $routes->get('galeria/subir',          'Admin\GaleriaAdminController::subir');
+    $routes->post('galeria/guardar',       'Admin\GaleriaAdminController::guardar');
+    $routes->get('galeria/eliminar/(:num)','Admin\GaleriaAdminController::eliminar/$1');
+    $routes->get('galeria/toggle/(:num)',  'Admin\GaleriaAdminController::toggleActivo/$1');
 });
 
 // Redirects 301 desde URLs de Joomla (preservar SEO)
