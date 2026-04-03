@@ -200,5 +200,10 @@ class Database extends Config
         if (ENVIRONMENT === 'testing') {
             $this->defaultGroup = 'tests';
         }
+
+        // SSL requerido para DigitalOcean Managed MySQL en producción
+        if (ENVIRONMENT === 'production') {
+            $this->default['encrypt'] = true;
+        }
     }
 }
