@@ -74,12 +74,10 @@
     </div>
 </section>
 
-<?php
-$tools = [
+<?php $this->setVar('tools', [
     ['logo' => 'enterprisesst.png', 'name' => 'EnterpriseSST', 'desc' => 'Software integral para la gestión y seguimiento del SG-SST en tiempo real.'],
     ['logo' => 'sstrojo.png', 'name' => 'Cycloid SST', 'desc' => 'Plataforma de documentación, indicadores y trazabilidad SST.'],
-];
-?>
+]); ?>
 <?= $this->include('partials/tools_section') ?>
 
 <?= $this->include('partials/contact_cta') ?>

@@ -73,7 +73,7 @@
             x-transition:enter="transition ease-out duration-300"
             x-transition:enter-start="opacity-0 translate-y-4 scale-75"
             x-transition:enter-end="opacity-100 translate-y-0 scale-100"
-            class="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-cycloid-navy shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 flex items-center justify-center ring-2 ring-white"
+            class="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-cycloid-navy shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 flex items-center justify-center ring-2 ring-white overflow-hidden"
             aria-label="Abrir asistente Otto">
 
         <!-- Pulse ring -->

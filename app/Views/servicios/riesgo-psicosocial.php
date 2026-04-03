@@ -131,14 +131,12 @@
     </div>
 </section>
 
-<?php
-$tools = [
+<?php $this->setVar('tools', [
     ['logo' => 'logo_psirysk.png', 'name' => 'PsyRisk', 'desc' => 'Plataforma de evaluación y análisis de batería de riesgo psicosocial laboral.'],
     ['logo' => 'logo_rps.png', 'name' => 'Cycloid RPS', 'desc' => 'Portafolio integral de gestión de riesgo psicosocial.'],
     ['logo' => 'psicloidmethod.png', 'name' => 'Psycloid Method', 'desc' => 'Modelo propio de análisis e intervención de batería de riesgo psicosocial.'],
     ['logo' => 'sstrojo.png', 'name' => 'Cycloid SST', 'desc' => 'Plataforma de documentación, indicadores y trazabilidad SST.'],
-];
-?>
+]); ?>
 <?= $this->include('partials/tools_section') ?>
 
 <?= $this->include('partials/contact_cta') ?>

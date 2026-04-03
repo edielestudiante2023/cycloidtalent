@@ -35,6 +35,7 @@
 
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="<?= base_url('assets/css/output.css') ?>">
+    <style>[x-cloak] { display: none !important; }</style>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="<?= base_url('img/otto-favicon.png') ?>">
