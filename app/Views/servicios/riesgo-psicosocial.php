@@ -83,15 +83,15 @@
 
         <div x-data="{
             actual: 0,
-            total: 8,
+            total: 18,
             prev() { this.actual = (this.actual - 1 + this.total) % this.total },
             next() { this.actual = (this.actual + 1) % this.total }
         }" class="relative">
 
             <!-- Imagen principal -->
             <div class="relative rounded-2xl overflow-hidden bg-gray-100 aspect-video">
-                <?php for ($i = 1; $i <= 8; $i++): ?>
-                <img src="<?= base_url('assets/img/services/rps-2026/' . $i . '.jpg') ?>"
+                <?php for ($i = 1; $i <= 18; $i++): ?>
+                <img src="<?= base_url('assets/img/Portafolio RPS - ACTUALIZACIÓN 2026/' . $i . '.png') ?>"
                      alt="Portafolio RPS <?= $i ?>"
                      class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
                      :class="actual === <?= $i - 1 ?> ? 'opacity-100' : 'opacity-0'">
@@ -118,11 +118,11 @@
 
             <!-- Miniaturas -->
             <div class="flex gap-2 mt-3 overflow-x-auto pb-1">
-                <?php for ($i = 1; $i <= 8; $i++): ?>
+                <?php for ($i = 1; $i <= 18; $i++): ?>
                 <button @click="actual = <?= $i - 1 ?>"
                         class="shrink-0 w-12 h-12 sm:w-16 sm:h-16 rounded-xl overflow-hidden border-2 transition"
                         :class="actual === <?= $i - 1 ?> ? 'border-cycloid-blue' : 'border-transparent opacity-60 hover:opacity-100'">
-                    <img src="<?= base_url('assets/img/services/rps-2026/' . $i . '.jpg') ?>"
+                    <img src="<?= base_url('assets/img/Portafolio RPS - ACTUALIZACIÓN 2026/' . $i . '.png') ?>"
                          alt="Miniatura <?= $i ?>" class="w-full h-full object-cover">
                 </button>
                 <?php endfor; ?>
