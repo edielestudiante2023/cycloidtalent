@@ -10,7 +10,7 @@
 <div class="mb-10 pb-8 border-b border-gray-200">
     <h1 class="text-3xl font-extrabold text-cycloid-navy mb-2">Reglamento de Higiene y Seguridad Industrial</h1>
     <p class="text-gray-500 text-sm">CYCLOID TALENT SAS — NIT 901.653.912-2</p>
-    <p class="text-gray-500 text-sm">Calle 13 #31-106, Soacha, Cundinamarca</p>
+    <p class="text-gray-500 text-sm">Tv. 24B #17-209, Conjunto Residencial Sandalo, Oficina 202, Soacha, Cundinamarca</p>
     <p class="text-gray-500 text-sm mt-2">Actividad económica: Consultoría en Seguridad y Salud en el Trabajo — Clase de Riesgo I</p>
 </div>
 
@@ -19,7 +19,7 @@ $articulos = [
     [
         'num' => 'ARTÍCULO 1',
         'titulo' => 'IDENTIFICACIÓN',
-        'contenido' => 'CYCLOID TALENT SAS, con NIT 901.653.912-2, domiciliada en Calle 13 #31-106, Soacha, Cundinamarca, con actividad económica de consultoría especializada en Seguridad y Salud en el Trabajo, se compromete mediante el presente reglamento a dar cumplimiento a las disposiciones contenidas en el Decreto Legislativo 1295 de 1994, la Resolución 2400 de 1979, la Ley 9 de 1979 y demás normas vigentes en materia de higiene y seguridad industrial.',
+        'contenido' => 'CYCLOID TALENT SAS, con NIT 901.653.912-2, domiciliada en Tv. 24B #17-209, Conjunto Residencial Sandalo, Oficina 202, Soacha, Cundinamarca, con actividad económica de consultoría especializada en Seguridad y Salud en el Trabajo, se compromete mediante el presente reglamento a dar cumplimiento a las disposiciones contenidas en el Decreto Legislativo 1295 de 1994, la Resolución 2400 de 1979, la Ley 9 de 1979 y demás normas vigentes en materia de higiene y seguridad industrial.',
     ],
     [
         'num' => 'ARTÍCULO 2',

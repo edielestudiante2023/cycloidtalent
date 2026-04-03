@@ -10,14 +10,14 @@
 <div class="mb-10 pb-8 border-b border-gray-200">
     <h1 class="text-3xl font-extrabold text-cycloid-navy mb-2">Reglamento Interno de Trabajo</h1>
     <p class="text-gray-500 text-sm">CYCLOID TALENT SAS — NIT 901.653.912-2</p>
-    <p class="text-gray-500 text-sm">Calle 13 #31-106, Soacha, Cundinamarca</p>
+    <p class="text-gray-500 text-sm">Tv. 24B #17-209, Conjunto Residencial Sandalo, Oficina 202, Soacha, Cundinamarca</p>
 </div>
 
 <?php
 $capitulos = [
     [
         'titulo' => 'CAPÍTULO I — IDENTIFICACIÓN Y DENOMINACIÓN DEL EMPLEADOR',
-        'contenido' => 'CYCLOID TALENT SAS, identificada con NIT 901.653.912-2, con domicilio principal en la Calle 13 #31-106, Soacha, Cundinamarca, Colombia, es una empresa dedicada a la prestación de servicios de consultoría en Seguridad y Salud en el Trabajo (SST), evaluación de riesgo psicosocial y gestión empresarial.',
+        'contenido' => 'CYCLOID TALENT SAS, identificada con NIT 901.653.912-2, con domicilio principal en la Tv. 24B #17-209, Conjunto Residencial Sandalo, Oficina 202, Soacha, Cundinamarca, Colombia, es una empresa dedicada a la prestación de servicios de consultoría en Seguridad y Salud en el Trabajo (SST), evaluación de riesgo psicosocial y gestión empresarial.',
     ],
     [
         'titulo' => 'CAPÍTULO II — CONDICIONES DE ADMISIÓN',

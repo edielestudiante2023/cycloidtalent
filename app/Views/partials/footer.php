@@ -41,7 +41,7 @@
             <div>
                 <h4 class="text-sm font-semibold uppercase tracking-wider text-gray-300 mb-4">Contacto</h4>
                 <ul class="space-y-2 text-sm text-gray-400 mb-6">
-                    <li>Calle 13 # 31-106, Soacha</li>
+                    <li>Tv. 24B #17-209, Soacha, Oficina 202</li>
                     <li>Cundinamarca, Colombia</li>
                     <li>
                         <a href="tel:3229074371" class="hover:text-cycloid-cyan transition-colors">322 907 4371</a>
