@@ -16,8 +16,8 @@
 <section class="py-14 sm:py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-14">
-            <p class="text-cycloid-blue text-sm font-semibold uppercase tracking-widest mb-2">Más de 50 empresas atendidas</p>
-            <h2 class="text-3xl md:text-4xl font-bold text-cycloid-navy">Empresas que nos eligen</h2>
+            <p class="text-cycloid-blue text-sm font-semibold uppercase tracking-widest mb-2">Más de 50 clientes atendidos</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-cycloid-navy">Clientes que nos eligen</h2>
             <p class="mt-4 text-gray-500 max-w-xl mx-auto">
                 Trabajamos con empresas de servicios, propiedad horizontal, financiero y más sectores en Colombia.
             </p>
