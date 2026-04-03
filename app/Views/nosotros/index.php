@@ -83,10 +83,10 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <?php
             $equipo = [
-                ['foto' => 'edison.png',  'nombre' => 'Edison Cuervo',   'cargo' => 'Director General'],
-                ['foto' => 'diana.png',   'nombre' => 'Diana Cuestas',   'cargo' => 'Coordinadora SST'],
-                ['foto' => 'eleyson.png', 'nombre' => 'Eleyson Segura',  'cargo' => 'Especialista SST'],
-                ['foto' => 'natalia.png', 'nombre' => 'Natalia Jiménez', 'cargo' => 'Psicóloga Organizacional'],
+                ['foto' => 'edison.png',  'nombre' => 'Edison Cuervo',   'cargo' => 'Director Administrativo'],
+                ['foto' => 'diana.png',   'nombre' => 'Diana Cuestas',   'cargo' => 'Directora Comercial'],
+                ['foto' => 'eleyson.png', 'nombre' => 'Eleyson Segura',  'cargo' => 'Director RPS'],
+                ['foto' => 'natalia.png', 'nombre' => 'Natalia Jiménez', 'cargo' => 'Directora SST'],
             ];
             foreach ($equipo as $m): ?>
             <div class="text-center">
