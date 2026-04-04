@@ -18,9 +18,6 @@
                     <li><a href="<?= base_url('servicios/consultoria-sst') ?>" class="hover:text-cycloid-cyan transition-colors">Consultoría SG-SST</a></li>
                     <li><a href="<?= base_url('servicios/riesgo-psicosocial') ?>" class="hover:text-cycloid-cyan transition-colors">Riesgo Psicosocial</a></li>
                     <li><a href="<?= base_url('servicios/propiedad-horizontal') ?>" class="hover:text-cycloid-cyan transition-colors">Propiedad Horizontal</a></li>
-                    <li><a href="<?= base_url('servicios/brigada-emergencia') ?>" class="hover:text-cycloid-cyan transition-colors">Brigada de Emergencia</a></li>
-                    <li><a href="<?= base_url('servicios/auditoria-proveedores') ?>" class="hover:text-cycloid-cyan transition-colors">Auditoría Proveedores</a></li>
-                    <li><a href="<?= base_url('servicios/vigia-sst') ?>" class="hover:text-cycloid-cyan transition-colors">Vigía SST</a></li>
                 </ul>
             </div>
 
