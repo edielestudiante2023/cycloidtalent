@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cycloid-v1';
+const CACHE_NAME = 'cycloid-v2';
 
 const PRECACHE_URLS = [
   './',
@@ -46,6 +46,12 @@ self.addEventListener('fetch', event => {
 
   // Skip other cross-origin requests
   if (url.origin !== self.location.origin) return;
+
+  // Pages with forms or admin: always network, never cache
+  if (request.mode === 'navigate' && (url.pathname.match(/contacto|admin/))) {
+    event.respondWith(fetch(request).catch(() => caches.match('./offline.html')));
+    return;
+  }
 
   // Navigation requests: network-first with offline fallback
   if (request.mode === 'navigate') {
