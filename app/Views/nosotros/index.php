@@ -7,8 +7,9 @@
         <p class="text-cycloid-cyan text-sm font-semibold uppercase tracking-widest mb-3">Quiénes somos</p>
         <h1 class="text-3xl md:text-5xl font-extrabold">Nosotros</h1>
         <p class="mt-4 text-gray-300 max-w-2xl">
-            Un equipo apasionado por la seguridad y salud en el trabajo, comprometido con proteger a las personas y las organizaciones.
+            Especialistas en Seguridad y Salud en el Trabajo y diagnóstico de riesgo psicosocial. Generamos tranquilidad y confianza mediante innovación tecnológica.
         </p>
+        <p class="mt-2 text-cycloid-cyan font-semibold italic">"Sistemas que evolucionan"</p>
     </div>
 </section>
 
@@ -24,7 +25,7 @@
                 </div>
                 <h2 class="text-xl font-bold text-cycloid-navy mb-3">Misión</h2>
                 <p class="text-gray-500 leading-relaxed">
-                    Brindar soluciones integrales en Seguridad y Salud en el Trabajo que protejan la integridad de los trabajadores y garanticen el cumplimiento normativo de las empresas colombianas, a través de un servicio especializado, humano y efectivo.
+                    Cycloid Talent es una empresa especializada en Sistemas de Gestión en Seguridad y Salud en el Trabajo y diagnósticos de riesgo psicosocial. Generamos tranquilidad y confianza mediante nuestra innovación tecnológica.
                 </p>
             </div>
             <div class="bg-cycloid-bg rounded-2xl p-5 sm:p-8 border border-gray-100">
@@ -36,7 +37,7 @@
                 </div>
                 <h2 class="text-xl font-bold text-cycloid-navy mb-3">Visión</h2>
                 <p class="text-gray-500 leading-relaxed">
-                    Ser reconocidos en 2028 como la consultora SST de referencia en la región, destacándonos por la calidad de nuestros servicios, la innovación en metodologías de evaluación psicosocial y la construcción de culturas organizacionales seguras y sostenibles.
+                    Posicionar a Cycloid Talent como el principal proveedor de administración SG-SST en Soacha y alrededores para el 2027 y en Bogotá para el 2030, así como ser reconocidos como uno de los principales proveedores en Colombia para el diagnóstico de evaluación de factores de riesgo psicosocial en 2030.
                 </p>
             </div>
         </div>
@@ -53,10 +54,10 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <?php
             $principios = [
-                ['icono' => 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', 'titulo' => 'Integridad', 'desc' => 'Actuamos con honestidad y transparencia en cada proceso, generando confianza con nuestros clientes.'],
-                ['icono' => 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z', 'titulo' => 'Compromiso humano', 'desc' => 'Ponemos a las personas en el centro de cada decisión. La seguridad es un derecho, no un trámite.'],
-                ['icono' => 'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z', 'titulo' => 'Innovación', 'desc' => 'Aplicamos metodologías actualizadas y herramientas tecnológicas para ofrecer soluciones efectivas.'],
-                ['icono' => 'M13 10V3L4 14h7v7l9-11h-7z', 'titulo' => 'Excelencia', 'desc' => 'Nos exigimos los más altos estándares de calidad en cada entregable, capacitación y asesoría.'],
+                ['icono' => 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', 'titulo' => 'Integridad', 'desc' => 'Actuamos con honestidad, ética y coherencia en todas nuestras relaciones y procesos, garantizando transparencia en nuestras acciones y decisiones.'],
+                ['icono' => 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4', 'titulo' => 'Calidad', 'desc' => 'Nos comprometemos con la mejora continua de nuestros servicios y procesos, asegurando altos estándares de desempeño que generen valor y satisfacción.'],
+                ['icono' => 'M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3', 'titulo' => 'Cumplimiento normativo', 'desc' => 'Respetamos la legislación vigente, las regulaciones aplicables y las políticas internas, actuando siempre dentro del marco legal y ético.'],
+                ['icono' => 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z', 'titulo' => 'Orientación al cliente', 'desc' => 'Escuchamos y comprendemos las necesidades de nuestros clientes para ofrecer soluciones efectivas, oportunas y de calidad.'],
             ];
             foreach ($principios as $p): ?>
             <div class="bg-white rounded-2xl p-6 border border-gray-100 text-center">
@@ -67,6 +68,61 @@
                 </div>
                 <h3 class="font-bold text-cycloid-navy mb-2"><?= $p['titulo'] ?></h3>
                 <p class="text-sm text-gray-500 leading-relaxed"><?= $p['desc'] ?></p>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+
+<!-- Valores -->
+<section class="py-14 sm:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-14">
+            <p class="text-cycloid-blue text-sm font-semibold uppercase tracking-widest mb-2">Nuestra esencia</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-cycloid-navy">Valores empresariales</h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <?php
+            $valores = [
+                ['titulo' => 'Empatía', 'desc' => 'Comprendemos las necesidades, emociones y expectativas de nuestros clientes y colaboradores, construyendo relaciones humanas basadas en la confianza.'],
+                ['titulo' => 'Vocación de servicio', 'desc' => 'Actuamos con disposición y compromiso hacia quienes confían en nosotros, entregando soluciones que aporten valor real y satisfacción.'],
+                ['titulo' => 'Confianza', 'desc' => 'Fomentamos relaciones sólidas y duraderas basadas en la transparencia, la credibilidad y el cumplimiento de nuestras promesas.'],
+                ['titulo' => 'Humanización', 'desc' => 'Priorizamos a las personas sobre los procesos, creando experiencias laborales más conscientes, empáticas y orientadas al bienestar integral.'],
+            ];
+            foreach ($valores as $v): ?>
+            <div class="bg-cycloid-bg rounded-2xl p-6 border border-gray-100">
+                <div class="w-10 h-10 bg-cycloid-cyan/10 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-cycloid-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                    </svg>
+                </div>
+                <h3 class="font-bold text-cycloid-navy mb-2"><?= $v['titulo'] ?></h3>
+                <p class="text-sm text-gray-500 leading-relaxed"><?= $v['desc'] ?></p>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+
+<!-- Políticas de calidad -->
+<section class="py-14 sm:py-20 bg-cycloid-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-14">
+            <p class="text-cycloid-blue text-sm font-semibold uppercase tracking-widest mb-2">Nuestro compromiso</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-cycloid-navy">Políticas de calidad</h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <?php
+            $politicas = [
+                'Garantizamos la actualización normativa continua de nuestros clientes en materia de Seguridad y Salud en el Trabajo, asegurando el cumplimiento de las disposiciones legales vigentes.',
+                'Fidelizamos a nuestros clientes mediante la excelencia en el servicio y la atención permanente a sus necesidades.',
+                'Mantenemos y fortalecemos las competencias de nuestro personal, asegurando que su formación y experiencia respaldan la calidad de los servicios que ofrecemos.',
+                'Cumplimos con los requisitos legales, reglamentarios y otros aplicables en todos los ámbitos de nuestra gestión, garantizando transparencia y responsabilidad.',
+            ];
+            foreach ($politicas as $i => $pol): ?>
+            <div class="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-100">
+                <span class="text-2xl font-extrabold text-cycloid-blue/20 leading-none shrink-0"><?= str_pad($i + 1, 2, '0', STR_PAD_LEFT) ?></span>
+                <p class="text-sm text-gray-500 leading-relaxed"><?= $pol ?></p>
             </div>
             <?php endforeach; ?>
         </div>
