@@ -27,6 +27,7 @@
                 <p class="text-gray-500 leading-relaxed">
                     Cycloid Talent es una empresa especializada en Sistemas de Gestión en Seguridad y Salud en el Trabajo y diagnósticos de riesgo psicosocial. Generamos tranquilidad y confianza mediante nuestra innovación tecnológica.
                 </p>
+                <p class="text-cycloid-blue font-bold italic mt-3">"SISTEMAS QUE EVOLUCIONAN"</p>
             </div>
             <div class="bg-cycloid-bg rounded-2xl p-5 sm:p-8 border border-gray-100">
                 <div class="w-12 h-12 bg-cycloid-cyan/10 rounded-xl flex items-center justify-center mb-5">
