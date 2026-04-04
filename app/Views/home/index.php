@@ -31,6 +31,16 @@
                 Riesgo Psicosocial &rarr;
             </a>
         </div>
+        <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin-top:1.5rem;">
+            <a href="<?= base_url('contacto') ?>"
+               class="bg-cycloid-blue text-white px-8 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors">
+                Solicitar asesoría
+            </a>
+            <a href="<?= base_url('nosotros') ?>"
+               class="border border-white/30 text-white px-8 py-3 rounded-xl font-semibold hover:bg-white/10 transition-colors">
+                Conoce el equipo
+            </a>
+        </div>
     </div>
 </section>
 
