@@ -179,66 +179,6 @@
 </section>
 
 <!-- ═══════════════════════════════════════════
-     BLOG RECIENTE
-════════════════════════════════════════════ -->
-<section class="py-20 bg-cycloid-bg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-end justify-between mb-12">
-            <div>
-                <p class="text-cycloid-blue text-sm font-semibold uppercase tracking-widest mb-2">Conocimiento</p>
-                <h2 class="text-3xl md:text-4xl font-bold text-cycloid-navy">Últimos artículos</h2>
-            </div>
-            <a href="<?= base_url('blog') ?>"
-               class="hidden sm:inline-flex text-cycloid-blue font-semibold text-sm hover:underline">
-                Ver todos →
-            </a>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            <?php
-            $posts = [
-                [
-                    'slug'     => 'evaluacion-rps-2026',
-                    'titulo'   => 'Nueva evaluación de Riesgo Psicosocial 2026',
-                    'fecha'    => 'Enero 2026',
-                    'extracto' => 'Conoce el portafolio actualizado de evaluación RPS 2026 con los nuevos lineamientos del Ministerio del Trabajo.',
-                ],
-                [
-                    'slug'     => 'sg-sst-que-es',
-                    'titulo'   => '¿Qué es el SG-SST y por qué es obligatorio?',
-                    'fecha'    => 'Mayo 2023',
-                    'extracto' => 'El SG-SST es obligatorio para todas las empresas en Colombia según el Decreto 1072 de 2015. Te explicamos qué implica.',
-                ],
-                [
-                    'slug'     => 'brigada-emergencia-importancia',
-                    'titulo'   => 'La importancia de una Brigada de Emergencia',
-                    'fecha'    => 'Sep 2023',
-                    'extracto' => 'Una brigada bien entrenada puede salvar vidas. Aprende cómo conformar la tuya según la normativa colombiana.',
-                ],
-            ];
-            foreach ($posts as $p): ?>
-            <a href="<?= base_url('blog/' . $p['slug']) ?>"
-               class="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-200">
-                <div class="bg-cycloid-navy/5 h-3 group-hover:bg-cycloid-blue transition-colors"></div>
-                <div class="p-6">
-                    <p class="text-xs text-gray-400 mb-3"><?= $p['fecha'] ?></p>
-                    <h3 class="font-bold text-cycloid-navy mb-3 group-hover:text-cycloid-blue transition-colors leading-snug">
-                        <?= $p['titulo'] ?>
-                    </h3>
-                    <p class="text-sm text-gray-500 leading-relaxed"><?= $p['extracto'] ?></p>
-                    <p class="mt-4 text-cycloid-blue text-sm font-semibold">Leer artículo →</p>
-                </div>
-            </a>
-            <?php endforeach; ?>
-        </div>
-
-        <div class="text-center mt-8 sm:hidden">
-            <a href="<?= base_url('blog') ?>" class="text-cycloid-blue font-semibold text-sm">Ver todos los artículos →</a>
-        </div>
-    </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
      CTA FINAL
 ════════════════════════════════════════════ -->
 <section class="bg-cycloid-blue py-16">
