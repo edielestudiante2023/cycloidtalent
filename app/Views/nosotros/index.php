@@ -3,13 +3,20 @@
 
 <!-- Hero mini -->
 <section class="bg-cycloid-navy text-white py-10 sm:py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p class="text-cycloid-cyan text-sm font-semibold uppercase tracking-widest mb-3">Quiénes somos</p>
-        <h1 class="text-3xl md:text-5xl font-extrabold">Nosotros</h1>
-        <p class="mt-4 text-gray-300 max-w-2xl">
-            Especialistas en Seguridad y Salud en el Trabajo y diagnóstico de riesgo psicosocial. Generamos tranquilidad y confianza mediante innovación tecnológica.
-        </p>
-        <p class="mt-2 text-cycloid-cyan font-semibold italic">"Sistemas que evolucionan"</p>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+        <div class="flex-1">
+            <p class="text-cycloid-cyan text-sm font-semibold uppercase tracking-widest mb-3">Quiénes somos</p>
+            <h1 class="text-3xl md:text-5xl font-extrabold">Nosotros</h1>
+            <p class="mt-4 text-gray-300 max-w-2xl">
+                Especialistas en Seguridad y Salud en el Trabajo y diagnóstico de riesgo psicosocial. Generamos tranquilidad y confianza mediante innovación tecnológica.
+            </p>
+            <p class="mt-2 text-cycloid-cyan font-semibold italic">"Sistemas que evolucionan"</p>
+        </div>
+        <div class="flex-shrink-0">
+            <img src="<?= base_url('assets/img/logos/cycloid_sqe.jpg') ?>"
+                 alt="Cycloid Talent - Sistemas que evolucionan"
+                 style="max-height:200px;width:auto;border-radius:1rem;" loading="lazy">
+        </div>
     </div>
 </section>
 
