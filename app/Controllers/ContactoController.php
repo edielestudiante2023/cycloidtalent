@@ -40,7 +40,7 @@ class ContactoController extends BaseController
         $empresa  = $this->request->getPost('empresa');
         $telefono = $this->request->getPost('telefono');
         $servicio = $this->request->getPost('servicio');
-        $mensaje  = $this->request->getPost('mensaje');
+        $mensaje  = $this->request->getPost('mensaje') ?? '';
 
         // 1) Guardar en base de datos (siempre)
         $contactoModel = new ContactoModel();
