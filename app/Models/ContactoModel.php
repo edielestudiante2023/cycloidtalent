@@ -16,6 +16,6 @@ class ContactoModel extends Model
         'nombre'  => 'required|min_length[2]|max_length[100]',
         'email'   => 'required|valid_email|max_length[150]',
         'asunto'  => 'required|max_length[200]',
-        'mensaje' => 'required',
+        'mensaje' => 'permit_empty',
     ];
 }
