@@ -11,7 +11,8 @@
                 Especialistas en Seguridad y Salud en el Trabajo y diagnóstico de riesgo psicosocial. Generamos tranquilidad y confianza mediante innovación tecnológica.
             </p>
         </div>
-        <div style="flex-shrink:0;">
+        <style>.nosotros-logo{display:none}@media(min-width:1024px){.nosotros-logo{display:block}}</style>
+        <div class="nosotros-logo" style="flex-shrink:0;">
             <img src="<?= base_url('assets/img/logos/cycloid_sqe.jpg') ?>"
                  alt="Cycloid Talent - Sistemas que evolucionan"
                  style="max-height:180px;width:auto;border-radius:1rem;" loading="lazy">
