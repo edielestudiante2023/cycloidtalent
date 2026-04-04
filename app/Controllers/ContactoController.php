@@ -8,6 +8,9 @@ class ContactoController extends BaseController
 {
     public function index()
     {
+        $this->response->setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
+        $this->response->setHeader('Pragma', 'no-cache');
+
         return view('contacto/index', [
             'title'       => 'Contacto',
             'description' => 'Contáctanos para una asesoría en SST, Baterías de Riesgo Psicosocial o cualquiera de nuestros servicios en Colombia.',

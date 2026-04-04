@@ -41,8 +41,7 @@
                         Sin conexión a internet. El formulario requiere conexión para enviar tu mensaje.
                     </div>
 
-                    <form action="<?= base_url('contacto/enviar') ?>" method="POST">
-                        <?= csrf_field() ?>
+                    <form action="<?= base_url('contacto/enviar') ?>" method="POST" id="contactForm">
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
                             <div>

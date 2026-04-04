@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use Config\BlogArticles;
+use App\Models\BlogPostModel;
 
 class SitemapController extends BaseController
 {
@@ -15,22 +15,20 @@ class SitemapController extends BaseController
             ['loc' => base_url('servicios/consultoria-sst'),      'priority' => '0.9', 'changefreq' => 'monthly'],
             ['loc' => base_url('servicios/riesgo-psicosocial'),   'priority' => '0.9', 'changefreq' => 'monthly'],
             ['loc' => base_url('servicios/propiedad-horizontal'), 'priority' => '0.7', 'changefreq' => 'monthly'],
-            ['loc' => base_url('servicios/brigada-emergencia'),   'priority' => '0.7', 'changefreq' => 'monthly'],
-            ['loc' => base_url('servicios/auditoria-proveedores'),'priority' => '0.7', 'changefreq' => 'monthly'],
-            ['loc' => base_url('servicios/vigia-sst'),            'priority' => '0.7', 'changefreq' => 'monthly'],
             ['loc' => base_url('blog'),                           'priority' => '0.8', 'changefreq' => 'weekly'],
             ['loc' => base_url('nosotros'),                       'priority' => '0.5', 'changefreq' => 'monthly'],
             ['loc' => base_url('contacto'),                       'priority' => '0.5', 'changefreq' => 'monthly'],
             ['loc' => base_url('clientes'),                       'priority' => '0.4', 'changefreq' => 'monthly'],
         ];
 
-        // Blog articles
-        foreach (BlogArticles::getAll() as $a) {
+        // Blog posts from DB
+        $blogModel = new BlogPostModel();
+        foreach ($blogModel->getPublicados() as $p) {
             $urls[] = [
-                'loc'        => base_url('blog/' . $a['slug']),
+                'loc'        => base_url('blog/' . $p['slug']),
                 'priority'   => '0.6',
                 'changefreq' => 'monthly',
-                'lastmod'    => $a['fecha'],
+                'lastmod'    => date('Y-m-d', strtotime($p['created_at'])),
             ];
         }
 
