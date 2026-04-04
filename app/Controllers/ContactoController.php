@@ -26,7 +26,7 @@ class ContactoController extends BaseController
             'empresa'  => 'required|min_length[2]',
             'telefono' => 'required|min_length[7]',
             'servicio' => 'required',
-            'mensaje'  => 'required|min_length[10]',
+            'mensaje'  => 'permit_empty',
         ];
 
         if (! $this->validate($rules)) {
