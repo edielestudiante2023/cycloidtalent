@@ -172,8 +172,7 @@
 
                 <div class="bg-cycloid-blue/5 rounded-2xl p-6 border border-cycloid-blue/20">
                     <p class="text-sm text-cycloid-navy font-medium mb-1">Horario de atención</p>
-                    <p class="text-sm text-gray-600">Lunes a Viernes: 8:00 am – 6:00 pm</p>
-                    <p class="text-sm text-gray-600">Sábados: 9:00 am – 1:00 pm</p>
+                    <p class="text-sm text-gray-600">Lunes a Viernes: 8:00 am – 5:00 pm</p>
                 </div>
             </div>
         </div>
