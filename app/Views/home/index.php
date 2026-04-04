@@ -147,46 +147,32 @@
 ════════════════════════════════════════════ -->
 <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div>
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-10">
                 <p class="text-cycloid-blue text-sm font-semibold uppercase tracking-widest mb-3">¿Por qué elegirnos?</p>
                 <h2 class="text-3xl md:text-4xl font-bold text-cycloid-navy mb-6">
                     Expertos en SST<br>con resultados reales
                 </h2>
-                <p class="text-gray-500 leading-relaxed mb-8">
+                <p class="text-gray-500 leading-relaxed">
                     En Cycloid Talent combinamos experiencia técnica con un enfoque humano.
                     No solo cumplimos la normativa — ayudamos a construir culturas de seguridad
                     que protegen a las personas y a las empresas.
                 </p>
-                <div class="grid grid-cols-2 gap-6">
-                    <?php
-                    $stats = [
-                        ['num' => '+50',  'label' => 'Empresas atendidas'],
-                        ['num' => '+500', 'label' => 'Trabajadores capacitados'],
-                        ['num' => '100%', 'label' => 'Cumplimiento normativo'],
-                        ['num' => '+5',   'label' => 'Años de experiencia'],
-                    ];
-                    foreach ($stats as $s): ?>
-                    <div>
-                        <p class="text-3xl font-extrabold text-cycloid-blue"><?= $s['num'] ?></p>
-                        <p class="text-sm text-gray-500 mt-1"><?= $s['label'] ?></p>
-                    </div>
-                    <?php endforeach; ?>
-                </div>
             </div>
-            <div class="grid grid-cols-2 gap-4">
-                <img src="<?= base_url('assets/img/Portafolio RPS - ACTUALIZACIÓN 2026/1.png') ?>"
-                     alt="Cycloid Talent en acción"
-                     class="rounded-2xl object-cover w-full h-48 shadow-md" loading="lazy">
-                <img src="<?= base_url('assets/img/Portafolio RPS - ACTUALIZACIÓN 2026/2.png') ?>"
-                     alt="Capacitación SST"
-                     class="rounded-2xl object-cover w-full h-48 shadow-md mt-6" loading="lazy">
-                <img src="<?= base_url('assets/img/Portafolio RPS - ACTUALIZACIÓN 2026/5.png') ?>"
-                     alt="Brigada de emergencia"
-                     class="rounded-2xl object-cover w-full h-48 shadow-md" loading="lazy">
-                <img src="<?= base_url('assets/img/Portafolio RPS - ACTUALIZACIÓN 2026/6.png') ?>"
-                     alt="Consultoría SST"
-                     class="rounded-2xl object-cover w-full h-48 shadow-md mt-6" loading="lazy">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+                <?php
+                $stats = [
+                    ['num' => '+50',  'label' => 'Clientes atendidos'],
+                    ['num' => '+500', 'label' => 'Trabajadores capacitados'],
+                    ['num' => '100%', 'label' => 'Cumplimiento normativo'],
+                    ['num' => '+5',   'label' => 'Años de experiencia'],
+                ];
+                foreach ($stats as $s): ?>
+                <div>
+                    <p class="text-3xl font-extrabold text-cycloid-blue"><?= $s['num'] ?></p>
+                    <p class="text-sm text-gray-500 mt-1"><?= $s['label'] ?></p>
+                </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>
