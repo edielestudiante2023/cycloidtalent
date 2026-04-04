@@ -33,6 +33,18 @@
                     </div>
                     <?php endif; ?>
 
+                    <?php $errors = session()->getFlashdata('errors'); ?>
+                    <?php if ($errors): ?>
+                    <div class="mb-6 bg-red-50 border border-red-200 text-red-800 rounded-xl px-4 py-3 text-sm">
+                        <p class="font-semibold mb-1">Por favor corrige los siguientes errores:</p>
+                        <ul class="list-disc list-inside">
+                            <?php foreach ($errors as $err): ?>
+                                <li><?= esc($err) ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                    <?php endif; ?>
+
                     <div x-data="{ online: navigator.onLine }"
                          x-init="window.addEventListener('online', () => online = true); window.addEventListener('offline', () => online = false)"
                          x-show="!online"

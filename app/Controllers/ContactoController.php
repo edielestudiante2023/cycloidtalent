@@ -30,6 +30,8 @@ class ContactoController extends BaseController
         ];
 
         if (! $this->validate($rules)) {
+            log_message('error', 'Contacto validación falló: ' . json_encode($this->validator->getErrors()));
+            log_message('error', 'Contacto POST data: ' . json_encode($this->request->getPost()));
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
 
