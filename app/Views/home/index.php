@@ -100,49 +100,6 @@
 </section>
 
 <!-- ═══════════════════════════════════════════
-     CLIENTES (logos)
-════════════════════════════════════════════ -->
-<section class="py-16 bg-cycloid-bg border-y border-gray-100">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p class="text-center text-sm font-semibold uppercase tracking-widest text-gray-400 mb-10">
-            Empresas que confían en nosotros
-        </p>
-        <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-            <a href="<?= base_url('clientes') ?>"
-               class="grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300">
-                <img src="<?= base_url('assets/img/clients/meltec.png') ?>"
-                     alt="Meltec" class="h-10 w-auto object-contain" loading="lazy">
-            </a>
-            <a href="<?= base_url('clientes') ?>"
-               class="grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300">
-                <img src="<?= base_url('assets/img/clients/polux.jpg') ?>"
-                     alt="Polux" class="h-10 w-auto object-contain" loading="lazy">
-            </a>
-            <a href="<?= base_url('clientes') ?>"
-               class="grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300">
-                <img src="<?= base_url('assets/img/clients/client1.png') ?>"
-                     alt="Cliente" class="h-10 w-auto object-contain" loading="lazy">
-            </a>
-            <a href="<?= base_url('clientes') ?>"
-               class="grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300">
-                <img src="<?= base_url('assets/img/clients/client2.png') ?>"
-                     alt="Cliente" class="h-10 w-auto object-contain" loading="lazy">
-            </a>
-            <a href="<?= base_url('clientes') ?>"
-               class="grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300">
-                <img src="<?= base_url('assets/img/clients/client3.png') ?>"
-                     alt="Cliente" class="h-10 w-auto object-contain" loading="lazy">
-            </a>
-            <a href="<?= base_url('clientes') ?>"
-               class="grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300">
-                <img src="<?= base_url('assets/img/clients/client4.png') ?>"
-                     alt="Cliente" class="h-10 w-auto object-contain" loading="lazy">
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
      POR QUÉ CYCLOID
 ════════════════════════════════════════════ -->
 <section class="py-20 bg-white">
