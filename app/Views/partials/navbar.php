@@ -35,7 +35,7 @@
                         <a href="<?= base_url('servicios/riesgo-psicosocial') ?>"
                            class="block px-4 py-2 hover:bg-cycloid-bg hover:text-cycloid-blue transition-colors">Riesgo Psicosocial</a>
                         <a href="<?= base_url('servicios/propiedad-horizontal') ?>"
-                           class="block px-4 py-2 hover:bg-cycloid-bg hover:text-cycloid-blue transition-colors">Propiedad Horizontal</a>
+                           class="block px-4 py-2 hover:bg-cycloid-bg hover:text-cycloid-blue transition-colors">SST en Propiedad Horizontal</a>
                     </div>
                 </div>
 
@@ -84,7 +84,7 @@
                 <div x-show="sub" class="pl-4 space-y-1 text-gray-600">
                     <a href="<?= base_url('servicios/consultoria-sst') ?>" class="block py-1 hover:text-cycloid-blue">Consultoría SG-SST</a>
                     <a href="<?= base_url('servicios/riesgo-psicosocial') ?>" class="block py-1 hover:text-cycloid-blue">Riesgo Psicosocial</a>
-                    <a href="<?= base_url('servicios/propiedad-horizontal') ?>" class="block py-1 hover:text-cycloid-blue">Propiedad Horizontal</a>
+                    <a href="<?= base_url('servicios/propiedad-horizontal') ?>" class="block py-1 hover:text-cycloid-blue">SST en Propiedad Horizontal</a>
                 </div>
             </div>
 
