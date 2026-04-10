@@ -1,69 +1,146 @@
-# CodeIgniter 4 Application Starter
+# Cycloid Talent — Sitio Web Corporativo
 
-## What is CodeIgniter?
+Sitio web corporativo de **Cycloid Talent**, empresa colombiana de consultoría en Seguridad y Salud en el Trabajo (SST). Construido con CodeIgniter 4, Tailwind CSS y Alpine.js.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+**URL producción:** https://cycloidtalent.com
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+---
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+## Stack tecnológico
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+| Componente     | Tecnología                              |
+|----------------|------------------------------------------|
+| Backend        | PHP 8.2 + CodeIgniter 4.7               |
+| Base de datos  | MySQL 8 (DigitalOcean Managed, SSL)      |
+| CSS            | Tailwind CSS 3.4                         |
+| JS             | Alpine.js 3.15                           |
+| Email          | SendGrid API v3 (formulario de contacto) |
+| Servidor web   | Nginx (Ubuntu 24.04, Hetzner)            |
+| Panel          | aaPanel                                  |
 
-## Installation & updates
+---
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+## Módulos principales
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+| Módulo           | Descripción                                                        |
+|------------------|--------------------------------------------------------------------|
+| Home / Landing   | Hero, servicios destacados, clientes, CTA de contacto              |
+| Nosotros         | Misión, visión, equipo de trabajo                                  |
+| Servicios (6)    | Consultoría SST, Riesgo Psicosocial, Propiedad Horizontal, Brigada de Emergencia, Auditoría Proveedores, Vigía SST |
+| Blog             | Artículos con CMS admin, SEO friendly                              |
+| Contacto         | Formulario con validación, guardado en BD, notificación SendGrid   |
+| Legal            | Reglamento interno, reglamento de higiene                          |
+| Admin            | Dashboard, gestión de contactos, usuarios, blog, galería           |
+| SEO              | Sitemap XML, robots.txt, meta tags dinámicos, redirects 301 Joomla |
 
-## Setup
+---
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+## Roles de usuario
 
-## Important Change with index.php
+| Rol   | Acceso                                              |
+|-------|-----------------------------------------------------|
+| admin | Dashboard + gestión de contactos, usuarios, blog, galería |
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+---
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+## Estructura del proyecto
 
-**Please** read the user guide for a better explanation of how CI4 works!
+```
+cycloidtalent/
+├── app/
+│   ├── Config/            # Routes, Database, Filters, App
+│   ├── Controllers/       # 9 controladores públicos + 6 admin
+│   │   └── Admin/         # Auth, Dashboard, Contacto, Usuarios, Blog, Galería
+│   ├── Database/          # Migrations, Seeds
+│   ├── Filters/           # AuthFilter (protección panel admin)
+│   ├── Helpers/           # seo_helper.php (meta tags dinámicos)
+│   ├── Models/            # 5 modelos (BlogPost, Contacto, Galeria, Rol, Usuario)
+│   └── Views/             # Vistas PHP organizadas por módulo
+├── docs/                  # Documentación técnica
+├── public/                # Punto de entrada web (index.php, assets, imágenes)
+├── scripts/               # Scripts de migración (blog, galería)
+├── tests/                 # Tests PHPUnit
+├── vendor/                # Dependencias PHP (Composer)
+├── writable/              # Logs, cache, sesiones, uploads
+├── .env                   # Variables de entorno (NO commitear)
+├── .env.example           # Template de variables (SÍ commitear)
+├── composer.json          # Dependencias PHP
+├── package.json           # Dependencias Node (Tailwind, Alpine)
+├── tailwind.config.js     # Configuración Tailwind CSS
+├── spark                  # CLI de CodeIgniter
+└── CONTRIBUTING.md        # Guía de contribución
+```
 
-## Repository Management
+---
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+## Requisitos previos
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+- PHP >= 8.2 con extensiones: intl, mbstring, mysqlnd, curl, json
+- Composer
+- Node.js >= 18 (para compilar Tailwind CSS)
+- MySQL 8
+- Servidor web: Nginx o Apache
 
-## Server Requirements
+---
 
-PHP version 8.2 or higher is required, with the following extensions installed:
+## Instalación local
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+```bash
+# 1. Clonar el repositorio
+git clone https://github.com/edielestudiante2023/cycloidtalent.git
+cd cycloidtalent
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - The end of life date for PHP 8.1 was December 31, 2025.
-> - If you are still using below PHP 8.2, you should upgrade immediately.
-> - The end of life date for PHP 8.2 will be December 31, 2026.
+# 2. Instalar dependencias PHP
+composer install
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+# 3. Instalar dependencias Node
+npm install
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+# 4. Configurar variables de entorno
+cp env .env
+# Editar .env con tus datos locales (ver .env.example)
+
+# 5. Compilar Tailwind CSS
+npm run build
+
+# 6. Iniciar servidor de desarrollo
+php spark serve
+# Visitar http://localhost:8080
+```
+
+---
+
+## Variables de entorno
+
+| Variable                      | Descripción                          |
+|-------------------------------|--------------------------------------|
+| `CI_ENVIRONMENT`              | development / production             |
+| `app.baseURL`                 | URL base del sitio                   |
+| `database.default.hostname`   | Host de la base de datos             |
+| `database.default.database`   | Nombre de la base de datos           |
+| `database.default.username`   | Usuario de BD                        |
+| `database.default.password`   | Password de BD                       |
+| `database.default.DBDriver`   | Driver (MySQLi)                      |
+| `database.default.port`       | Puerto de BD                         |
+| `SENDGRID_API_KEY`            | API Key de SendGrid (email contacto) |
+
+---
+
+## Deploy
+
+El deploy se realiza via `git push` a la rama `main`. El servidor de producción (Hetzner, 66.29.154.174) tiene configurado un webhook/pull automático.
+
+**Ruta en producción:** `/www/wwwroot/cycloidtalent/`
+
+---
+
+## Cron jobs
+
+Este sitio web corporativo **no tiene cron jobs**. Es un sitio estático con formulario de contacto.
+
+---
+
+## Documentación adicional
+
+- [CONTRIBUTING.md](CONTRIBUTING.md) — Guía de contribución
+- [docs/HARDENING-cycloidtalent.md](docs/HARDENING-cycloidtalent.md) — Documento de hardening del repositorio

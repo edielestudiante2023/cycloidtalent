@@ -20,6 +20,24 @@ class ContactoController extends BaseController
 
     public function enviar()
     {
+        // Anti-spam: honeypot (bots llenan este campo oculto)
+        if (! empty($this->request->getPost('website'))) {
+            log_message('warning', 'Contacto spam bloqueado (honeypot) IP: ' . $this->request->getIPAddress());
+            return redirect()->to(base_url('contacto'))->with('success', '¡Mensaje enviado! Te contactaremos pronto.');
+        }
+
+        // Anti-spam: tiempo mínimo (bots envían en menos de 3 segundos)
+        $ts = (int) $this->request->getPost('_ts');
+        if ($ts > 0 && (time() - $ts) < 3) {
+            log_message('warning', 'Contacto spam bloqueado (tiempo) IP: ' . $this->request->getIPAddress());
+            return redirect()->to(base_url('contacto'))->with('success', '¡Mensaje enviado! Te contactaremos pronto.');
+        }
+
+        // Anti-spam: checkbox obligatorio
+        if (! $this->request->getPost('humano')) {
+            return redirect()->back()->withInput()->with('error', 'Debes confirmar que no eres un robot.');
+        }
+
         $rules = [
             'nombre'   => 'required|min_length[2]',
             'email'    => 'required|valid_email',

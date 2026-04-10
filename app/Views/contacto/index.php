@@ -54,6 +54,12 @@
                     </div>
 
                     <form action="<?= base_url('contacto/enviar') ?>" method="POST" id="contactForm">
+                        <!-- Honeypot: campo invisible para bots -->
+                        <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
+                            <input type="text" name="website" tabindex="-1" autocomplete="off" value="">
+                        </div>
+                        <!-- Timestamp anti-bot -->
+                        <input type="hidden" name="_ts" value="<?= time() ?>">
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
                             <div>
@@ -118,6 +124,19 @@
                             <?php if (isset($errors['mensaje'])): ?>
                             <p class="text-red-500 text-xs mt-1"><?= $errors['mensaje'] ?></p>
                             <?php endif; ?>
+                        </div>
+
+                        <!-- Verificación humana -->
+                        <div class="mb-6" x-data="{ checked: false }">
+                            <label style="display:flex;align-items:center;gap:0.75rem;padding:0.75rem 1rem;border:2px solid #e5e7eb;border-radius:0.75rem;cursor:pointer;user-select:none;"
+                                   :style="checked ? 'border-color:#0345BF;background:#f0f7ff' : ''">
+                                <input type="checkbox" name="humano" value="1" x-model="checked" required
+                                       style="width:1.25rem;height:1.25rem;accent-color:#0345BF;">
+                                <span class="text-sm font-medium text-gray-700">No soy un robot</span>
+                                <svg x-show="checked" style="margin-left:auto;width:1.25rem;height:1.25rem;color:#0345BF;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </label>
                         </div>
 
                         <button type="submit"

@@ -130,3 +130,14 @@ _modules/*
 /results/
 /phpunit*.xml
 scripts/
+
+#-------------------------
+# Claude Code
+#-------------------------
+.claude/
+
+#-------------------------
+# Uploads
+#-------------------------
+public/uploads/
+docs/

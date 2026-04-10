@@ -1,0 +1,75 @@
+name: Cutover a Produccion
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    name: Validacion de sintaxis y credenciales
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verificar sintaxis PHP
+        run: |
+          find app/ -name "*.php" -print0 | xargs -0 -n1 php -l 2>&1 | grep -q "Parse error" && exit 1 || echo "OK — Sin errores de sintaxis"
+      - name: Buscar credenciales hardcodeadas
+        run: |
+          FOUND=0
+          grep -rn "SG\.[a-zA-Z0-9_-]\{20,\}" app/ && FOUND=1 || true
+          grep -rn "AVNS_[a-zA-Z0-9_-]\{10,\}" app/ && FOUND=1 || true
+          grep -rn "sk-[a-zA-Z0-9]\{20,\}" app/ && FOUND=1 || true
+          if [ "$FOUND" -eq 1 ]; then
+            echo "FALLO: Credenciales hardcodeadas detectadas"
+            exit 1
+          fi
+          echo "OK"
+
+  trivy:
+    name: Escaneo de vulnerabilidades (Trivy)
+    runs-on: ubuntu-latest
+    needs: validate
+    steps:
+      - uses: actions/checkout@v4
+      - name: Instalar Trivy
+        run: |
+          curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin
+      - name: Escanear dependencias
+        run: |
+          trivy fs --severity HIGH,CRITICAL --exit-code 1 --ignore-unfixed .
+
+  semgrep:
+    name: Analisis estatico de seguridad (Semgrep)
+    runs-on: ubuntu-latest
+    needs: validate
+    steps:
+      - uses: actions/checkout@v4
+      - name: Instalar y ejecutar Semgrep
+        run: |
+          pip install semgrep
+          semgrep scan --config p/php --config p/secrets --config p/security-audit --error app/
+
+  deploy-production:
+    name: Deploy a Produccion
+    runs-on: ubuntu-latest
+    needs: [trivy, semgrep]
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_USER }}
+          key: ${{ secrets.PROD_SSH_KEY }}
+          script: |
+            cd ${{ secrets.PROD_PATH }}
+            git pull origin main
+            echo "Deploy produccion completado"
+      - name: Verificacion post-deploy
+        run: |
+          echo "Verificando que el sitio responda..."
+          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://cycloidtalent.com)
+          if [ "$HTTP_STATUS" -ne 200 ]; then
+            echo "ALERTA: El sitio respondio con HTTP $HTTP_STATUS"
+            exit 1
+          fi
+          echo "OK — Sitio respondiendo HTTP 200"
