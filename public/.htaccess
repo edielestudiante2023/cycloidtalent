@@ -16,6 +16,41 @@ Options -Indexes
 	# http://httpd.apache.org/docs/current/mod/mod_rewrite.html#rewritebase
 	# RewriteBase /
 
+	# ============================================================
+	# 410 GONE — URLs spam inyectadas en hackeo anterior (Joomla)
+	# Dice a Google "esto desapareció permanentemente, olvídalo"
+	# Deben ejecutarse ANTES del trailing slash redirect
+	# ============================================================
+
+	# Patrón: /item/uXXX/NNNN/ (spam inyectado)
+	RewriteRule ^item/u[0-9]+/[0-9]+/?$ - [G,L]
+
+	# Patrón: /[random-alphanumeric].html (basura spam)
+	RewriteRule ^[a-z0-9]{5,}\.html$ - [G,L]
+
+	# Patrón: /product/edit/* (inyección spam e-commerce)
+	RewriteRule ^product/edit/.* - [G,L]
+
+	# Patrón: /product/detail/* (inyección spam e-commerce)
+	RewriteRule ^product/detail/.* - [G,L]
+
+	# Patrón: /pcmypage* (inyección spam)
+	RewriteRule ^pcmypage - [G,L]
+
+	# Patrón: /component/* (Joomla viejo)
+	RewriteRule ^component/ - [G,L]
+
+	# Patrón: /index.php/* con parámetros antiguos Joomla
+	RewriteCond %{QUERY_STRING} option=com_
+	RewriteRule ^index\.php - [G,L]
+
+	# Patrón: /index.php/blog/* o similares de Joomla viejo
+	RewriteRule ^index\.php/(blog|component|joomla|administrator)/ - [G,L]
+
+	# ============================================================
+	# Fin de reglas 410
+	# ============================================================
+
 	# Redirect Trailing Slashes...
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteCond %{REQUEST_URI} (.+)/$
