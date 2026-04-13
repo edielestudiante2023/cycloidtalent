@@ -65,16 +65,27 @@ class ServiciosController extends BaseController
     public function propiedadHorizontal()
     {
         $url = base_url('servicios/propiedad-horizontal');
-        $title = 'SST en Propiedad Horizontal';
-        $desc  = 'Gestión SST especializada para conjuntos residenciales y edificios de propiedad horizontal en Colombia.';
+        $title = 'SST en Propiedad Horizontal Colombia | SG-SST Conjuntos Residenciales';
+        $desc  = 'SST en Propiedad Horizontal en Colombia. Implementación del SG-SST para conjuntos residenciales, edificios de oficinas y centros comerciales. Cumplimiento del Decreto 1072 adaptado a porteros, mantenimiento y servicios generales.';
+
+        $faqs = [
+            ['q' => '¿La propiedad horizontal está obligada a tener SG-SST en Colombia?', 'a' => 'Sí. Todos los conjuntos residenciales, edificios de oficinas y centros comerciales que tengan trabajadores directos (porteros, personal de aseo, jardinería, mantenimiento) están obligados a implementar el Sistema de Gestión de Seguridad y Salud en el Trabajo (SG-SST) según el Decreto 1072 de 2015. El administrador del conjunto es el responsable legal ante el Ministerio del Trabajo.'],
+            ['q' => '¿Quién es responsable del SG-SST en un conjunto residencial?', 'a' => 'El administrador del conjunto o edificio es el representante legal del empleador ante la Ley y por tanto es responsable directo de la implementación, mantenimiento y cumplimiento del SG-SST. El Consejo de Administración debe aprobar el presupuesto y las políticas, pero la gestión operativa recae en el administrador.'],
+            ['q' => '¿Qué pasa si un conjunto residencial no tiene SG-SST?', 'a' => 'El incumplimiento del SG-SST en propiedad horizontal genera multas del Ministerio del Trabajo de hasta 500 SMMLV, además de responsabilidad civil, penal y solidaria del administrador y del Consejo ante accidentes o enfermedades laborales del personal. También puede haber demandas de los propios copropietarios por negligencia administrativa.'],
+            ['q' => '¿Cómo aplicamos el SG-SST en propiedad horizontal?', 'a' => 'En Cycloid Talent adaptamos el SG-SST a la realidad de la propiedad horizontal: identificamos peligros en áreas comunes, zonas técnicas y espacios de trabajo del personal; evaluamos riesgos específicos (eléctricos, mecánicos, biológicos, psicosociales); diseñamos capacitaciones por rol (portería, aseo, jardinería, mantenimiento) y conformamos el COPASST o Vigía SST según el número de trabajadores.'],
+            ['q' => '¿El SG-SST cubre a los contratistas del conjunto?', 'a' => 'Sí. El SG-SST de propiedad horizontal debe incluir la gestión de contratistas y proveedores externos (vigilancia privada, piscineros, técnicos especializados, constructores). La administración debe exigir que estos contratistas tengan su propio SG-SST y evidencia de afiliación a ARL antes de permitir su ingreso al conjunto.'],
+            ['q' => '¿Cuánto cuesta implementar SG-SST en propiedad horizontal?', 'a' => 'El costo depende del número de trabajadores del conjunto, si la copropiedad tiene personal propio o subcontratado, y el nivel de riesgo. En Cycloid Talent ofrecemos planes especialmente diseñados para propiedad horizontal con acceso a la plataforma Phorizontal para gestión digital. Solicita una cotización gratuita según tu conjunto o edificio.'],
+        ];
 
         return view('servicios/propiedad-horizontal', [
             'title'       => $title,
             'description' => $desc,
             'canonical'   => $url,
+            'faqs'        => $faqs,
             'jsonld'      => seo_graph_jsonld([
                 seo_service_jsonld($title, $desc, $url),
-                seo_breadcrumb_jsonld([['Inicio', base_url('/')], [$title, $url]]),
+                seo_breadcrumb_jsonld([['Inicio', base_url('/')], ['SST en Propiedad Horizontal', $url]]),
+                seo_faq_jsonld($faqs),
             ]),
         ]);
     }
