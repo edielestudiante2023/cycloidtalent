@@ -34,19 +34,30 @@ class ServiciosController extends BaseController
     public function riesgoPsicosocial()
     {
         $url = base_url('servicios/riesgo-psicosocial');
-        $title = 'Batería de Riesgo Psicosocial';
-        $desc  = 'Batería de Riesgo Psicosocial en Colombia. Evaluación con instrumentos del Ministerio del Trabajo según Resolución 2646 de 2008 y 2764 de 2022.';
+        $title = 'Batería de Riesgo Psicosocial Colombia | Evaluación RPS';
+        $desc  = 'Evaluación de Batería de Riesgo Psicosocial en Colombia con instrumentos del Ministerio del Trabajo. Aplicación, medición y plan de intervención según Resolución 2646 de 2008 y 2764 de 2022. RPS empresarial para empresas, propiedad horizontal y sector servicios.';
 
         $galeriaModel = new \App\Models\GaleriaServicioModel();
+
+        $faqs = [
+            ['q' => '¿Qué es la Batería de Riesgo Psicosocial?', 'a' => 'La Batería de Riesgo Psicosocial es el conjunto de instrumentos validados por el Ministerio del Trabajo de Colombia para identificar, evaluar y monitorear los factores de riesgo psicosocial intralaborales, extralaborales y de estrés. Incluye cuestionarios diferenciados por nivel de cargo (Forma A para jefes y profesionales, Forma B para operativos), ficha de datos generales y cuestionario de estrés.'],
+            ['q' => '¿Es obligatoria la evaluación de riesgo psicosocial en Colombia?', 'a' => 'Sí, la evaluación de riesgo psicosocial es obligatoria en Colombia para todas las empresas según la Resolución 2646 de 2008 del Ministerio del Trabajo. Además, la Resolución 2764 de 2022 actualizó los lineamientos y obliga a repetir la batería cada dos años o cuando haya cambios organizacionales significativos.'],
+            ['q' => '¿Quién puede aplicar la Batería de Riesgo Psicosocial?', 'a' => 'Solo un psicólogo con licencia vigente en Seguridad y Salud en el Trabajo (SST) emitida por la Secretaría de Salud puede aplicar, analizar e interpretar la Batería de Riesgo Psicosocial. En Cycloid Talent contamos con psicólogos licenciados con experiencia en evaluación RPS empresarial.'],
+            ['q' => '¿Cuánto cuesta la evaluación de Batería de Riesgo Psicosocial?', 'a' => 'El costo depende del número de trabajadores, la distribución por cargos, el tipo de aplicación (presencial o virtual) y el alcance del informe. Solicita una cotización personalizada según el tamaño y sector de tu empresa.'],
+            ['q' => '¿Cada cuánto se debe aplicar la Batería de Riesgo Psicosocial?', 'a' => 'La Batería de Riesgo Psicosocial debe aplicarse al menos cada dos años según la normativa vigente. También es obligatorio repetirla cuando hay cambios organizacionales significativos como fusiones, reestructuraciones, cambios de turnos o aumento importante del personal.'],
+            ['q' => '¿Qué incluye el informe de Riesgo Psicosocial?', 'a' => 'Nuestro informe de Riesgo Psicosocial incluye: resultados estadísticos por dominio y dimensión, identificación de niveles de riesgo por área y cargo, análisis cualitativo, recomendaciones priorizadas, plan de intervención a 12 meses, informe ejecutivo para la gerencia, informe técnico completo y certificado firmado por psicólogo con licencia SST.'],
+        ];
 
         return view('servicios/riesgo-psicosocial', [
             'title'       => $title,
             'description' => $desc,
             'canonical'   => $url,
             'galeria'     => $galeriaModel->getPorServicio('riesgo-psicosocial'),
+            'faqs'        => $faqs,
             'jsonld'      => seo_graph_jsonld([
                 seo_service_jsonld($title, $desc, $url),
-                seo_breadcrumb_jsonld([['Inicio', base_url('/')], [$title, $url]]),
+                seo_breadcrumb_jsonld([['Inicio', base_url('/')], ['Batería de Riesgo Psicosocial', $url]]),
+                seo_faq_jsonld($faqs),
             ]),
         ]);
     }

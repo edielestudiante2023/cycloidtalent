@@ -6,12 +6,12 @@
         <nav class="text-sm text-gray-400 mb-4">
             <a href="<?= base_url('/') ?>" class="hover:text-white">Inicio</a>
             <span class="mx-2">›</span>
-            <span class="text-white">Riesgo Psicosocial</span>
+            <span class="text-white">Batería de Riesgo Psicosocial</span>
         </nav>
-        <p class="text-cycloid-cyan text-sm font-semibold uppercase tracking-widest mb-3">Servicios</p>
-        <h1 class="text-3xl md:text-5xl font-extrabold">Evaluación de Riesgo Psicosocial</h1>
+        <p class="text-cycloid-cyan text-sm font-semibold uppercase tracking-widest mb-3">Servicios SST</p>
+        <h1 class="text-3xl md:text-5xl font-extrabold">Batería de Riesgo Psicosocial en Colombia</h1>
         <p class="mt-4 text-gray-300 max-w-2xl">
-            Identificamos, evaluamos y controlamos los factores de riesgo psicosocial laboral con la Batería de Instrumentos del Ministerio del Trabajo (Resolución 2646 de 2008).
+            Aplicamos, medimos y evaluamos la Batería de Riesgo Psicosocial con los instrumentos oficiales del Ministerio del Trabajo, cumpliendo la Resolución 2646 de 2008 y la Resolución 2764 de 2022.
         </p>
     </div>
 </section>
@@ -20,9 +20,9 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             <div>
-                <h2 class="text-2xl md:text-3xl font-bold text-cycloid-navy mb-5">¿Qué evaluamos?</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-cycloid-navy mb-5">¿Qué evaluamos en la Batería de Riesgo Psicosocial?</h2>
                 <p class="text-gray-500 leading-relaxed mb-8">
-                    El riesgo psicosocial afecta la salud mental, emocional y física de los trabajadores. Su gestión inadecuada genera ausentismo, accidentalidad y baja productividad. La Resolución 2646 obliga a todas las empresas a identificarlo y controlarlo.
+                    El <strong>riesgo psicosocial</strong> afecta la salud mental, emocional y física de los trabajadores. Su gestión inadecuada genera ausentismo, accidentalidad y baja productividad. La Resolución 2646 de 2008 y la Resolución 2764 de 2022 obligan a todas las empresas colombianas a identificar, evaluar y controlar los factores de riesgo psicosocial laboral mediante la Batería del Ministerio del Trabajo.
                 </p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <?php
@@ -152,6 +152,67 @@
     </div>
 </section>
 <?php endif; ?>
+
+<!-- ¿Por qué elegir Cycloid Talent para evaluación RPS? -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-14">
+            <p class="text-cycloid-blue text-sm font-semibold uppercase tracking-widest mb-2">¿Por qué elegirnos?</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-cycloid-navy mb-4">Evaluación de Riesgo Psicosocial con psicólogos licenciados</h2>
+            <p class="text-gray-500 leading-relaxed">
+                Somos especialistas en la aplicación de la Batería de Riesgo Psicosocial del Ministerio del Trabajo. Contamos con psicólogos con licencia SST vigente y herramientas tecnológicas propias para análisis preciso.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <?php
+            $beneficios = [
+                ['titulo' => 'Psicólogos con licencia SST', 'desc' => 'Todo nuestro equipo tiene licencia vigente en Seguridad y Salud en el Trabajo emitida por la Secretaría de Salud.'],
+                ['titulo' => 'Batería oficial MinTrabajo', 'desc' => 'Aplicamos los instrumentos oficiales validados del Ministerio del Trabajo según Resolución 2646 y 2764.'],
+                ['titulo' => 'Método Psycloid', 'desc' => 'Modelo propio de análisis e intervención basado en más de 5 años de experiencia en RPS empresarial.'],
+                ['titulo' => 'Plan de intervención', 'desc' => 'Entregamos plan de intervención priorizado a 12 meses con cronograma, responsables y métricas.'],
+            ];
+            foreach ($beneficios as $b): ?>
+            <div class="bg-cycloid-bg rounded-2xl p-6 border border-gray-100">
+                <div class="w-10 h-10 bg-cycloid-blue/10 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-cycloid-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
+                </div>
+                <h3 class="font-bold text-cycloid-navy mb-2"><?= $b['titulo'] ?></h3>
+                <p class="text-sm text-gray-500 leading-relaxed"><?= $b['desc'] ?></p>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+
+<!-- Preguntas Frecuentes -->
+<section class="py-20 bg-cycloid-bg">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <p class="text-cycloid-blue text-sm font-semibold uppercase tracking-widest mb-2">FAQ</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-cycloid-navy">Preguntas frecuentes sobre la Batería de Riesgo Psicosocial</h2>
+        </div>
+
+        <div class="space-y-4" x-data="{ open: 0 }">
+            <?php foreach ($faqs as $i => $faq): ?>
+            <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                <button type="button" @click="open === <?= $i ?> ? open = null : open = <?= $i ?>"
+                    class="w-full text-left p-5 flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors">
+                    <span class="font-semibold text-cycloid-navy text-sm md:text-base"><?= $faq['q'] ?></span>
+                    <svg class="w-5 h-5 text-cycloid-blue shrink-0 transition-transform" :class="open === <?= $i ?> ? 'rotate-180' : ''" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div x-show="open === <?= $i ?>" x-transition class="px-5 pb-5 text-sm text-gray-600 leading-relaxed">
+                    <?= $faq['a'] ?>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
 
 <?php $this->setVar('tools', [
     ['logo' => 'logo_psirysk.png', 'name' => 'PsyRisk', 'desc' => 'Plataforma de evaluación y análisis de batería de riesgo psicosocial laboral.'],
