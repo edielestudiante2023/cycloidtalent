@@ -10,12 +10,12 @@
             Consultoría SST en Colombia
         </p>
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-            Expertos en SG-SST<br>
+            Consultoría en SG-SST<br>
             <span class="text-cycloid-cyan">y Riesgo Psicosocial</span>
         </h1>
         <p class="text-gray-300 text-lg max-w-2xl mx-auto mb-10">
-            Administramos tu Sistema de Gestión en Seguridad y Salud en el Trabajo
-            y evaluamos el riesgo psicosocial de tu organización con la batería del Ministerio del Trabajo.
+            Cycloid Talent es una consultora especializada en Seguridad y Salud en el Trabajo en Colombia.
+            Implementamos tu SG-SST y evaluamos el riesgo psicosocial con la Batería oficial del Ministerio del Trabajo.
         </p>
         <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;">
             <a href="<?= base_url('servicios/consultoria-sst') ?>"
@@ -127,6 +127,63 @@
                 </div>
                 <?php endforeach; ?>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     CONTENIDO SEO — Explicación del negocio
+════════════════════════════════════════════ -->
+<section class="py-20 bg-cycloid-bg">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+            <p class="text-cycloid-blue text-sm font-semibold uppercase tracking-widest mb-2">Sobre nosotros</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-cycloid-navy">Consultoría SST especializada en Colombia</h2>
+        </div>
+        <div class="prose prose-lg max-w-none text-gray-600 leading-relaxed space-y-5">
+            <p>
+                <strong class="text-cycloid-navy">Cycloid Talent S.A.S.</strong> es una empresa colombiana especializada en Sistemas de Gestión de <strong>Seguridad y Salud en el Trabajo (SST)</strong> y diagnósticos de <strong>riesgo psicosocial laboral</strong>. Ubicados en Soacha, Cundinamarca, atendemos empresas de todo el país con una metodología integral que combina cumplimiento normativo, tecnología propia y acompañamiento humano.
+            </p>
+            <p>
+                Nuestra <strong>consultoría en SST</strong> ayuda a empresas de todos los tamaños a diseñar, implementar y mantener su <strong>SG-SST</strong> conforme al Decreto 1072 de 2015 y la Resolución 0312 de 2019. También aplicamos la <strong>Batería de Riesgo Psicosocial</strong> del Ministerio del Trabajo según la Resolución 2646 de 2008 y 2764 de 2022, con psicólogos licenciados en SST.
+            </p>
+            <p>
+                Somos especialistas en <strong>SST para propiedad horizontal</strong>, un sector con necesidades únicas. Acompañamos a administradores de conjuntos residenciales, edificios de oficinas y centros comerciales a proteger a sus trabajadores (porteros, personal de aseo, jardinería y mantenimiento) y a cumplir con la normativa evitando multas de hasta 500 SMMLV.
+            </p>
+            <p class="text-center pt-4">
+                <a href="<?= base_url('nosotros') ?>" class="inline-flex items-center gap-2 text-cycloid-blue font-semibold hover:underline">
+                    Conoce más sobre Cycloid Talent <span>&rarr;</span>
+                </a>
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FAQ — Preguntas frecuentes
+════════════════════════════════════════════ -->
+<section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <p class="text-cycloid-blue text-sm font-semibold uppercase tracking-widest mb-2">FAQ</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-cycloid-navy">Preguntas frecuentes sobre SST y SG-SST en Colombia</h2>
+        </div>
+
+        <div class="space-y-4" x-data="{ open: 0 }">
+            <?php foreach ($faqs as $i => $faq): ?>
+            <div class="bg-cycloid-bg rounded-2xl border border-gray-100 overflow-hidden">
+                <button type="button" @click="open === <?= $i ?> ? open = null : open = <?= $i ?>"
+                    class="w-full text-left p-5 flex items-center justify-between gap-4 hover:bg-gray-100 transition-colors">
+                    <span class="font-semibold text-cycloid-navy text-sm md:text-base"><?= $faq['q'] ?></span>
+                    <svg class="w-5 h-5 text-cycloid-blue shrink-0 transition-transform" :class="open === <?= $i ?> ? 'rotate-180' : ''" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div x-show="open === <?= $i ?>" x-transition class="px-5 pb-5 text-sm text-gray-600 leading-relaxed">
+                    <?= $faq['a'] ?>
+                </div>
+            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
