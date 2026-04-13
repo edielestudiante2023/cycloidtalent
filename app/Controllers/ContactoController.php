@@ -38,6 +38,58 @@ class ContactoController extends BaseController
             return redirect()->back()->withInput()->with('error', 'Debes confirmar que no eres un robot.');
         }
 
+        $nombre  = (string) $this->request->getPost('nombre');
+        $email   = (string) $this->request->getPost('email');
+        $empresa = (string) $this->request->getPost('empresa');
+        $mensaje = (string) $this->request->getPost('mensaje');
+
+        // Anti-spam: caracteres no latinos (cirílico, chino, árabe, etc.)
+        $textoCompleto = $nombre . ' ' . $empresa . ' ' . $mensaje;
+        if (preg_match('/[\p{Cyrillic}\p{Han}\p{Arabic}\p{Hebrew}\p{Thai}\p{Greek}]/u', $textoCompleto)) {
+            log_message('warning', 'Contacto spam bloqueado (caracteres no latinos) IP: ' . $this->request->getIPAddress() . ' | ' . $nombre . ' | ' . $email);
+            return redirect()->to(base_url('contacto'))->with('success', '¡Mensaje enviado! Te contactaremos pronto.');
+        }
+
+        // Anti-spam: patrón bot (nombre === empresa)
+        if (strcasecmp(trim($nombre), trim($empresa)) === 0) {
+            log_message('warning', 'Contacto spam bloqueado (nombre=empresa) IP: ' . $this->request->getIPAddress() . ' | ' . $nombre . ' | ' . $email);
+            return redirect()->to(base_url('contacto'))->with('success', '¡Mensaje enviado! Te contactaremos pronto.');
+        }
+
+        // Anti-spam: lista negra de nombres, emails y dominios
+        $blacklist = [
+            'nombres' => ['RobertBow', 'RobertBowen', 'MichaelBow', 'Jameslap', 'JamesLap'],
+            'emails'  => ['cfknappe@msn.com'],
+            'dominios_email' => [],
+        ];
+
+        $nombreLower = strtolower(trim($nombre));
+        $emailLower  = strtolower(trim($email));
+        $dominio     = substr(strrchr($emailLower, '@') ?: '', 1);
+
+        foreach ($blacklist['nombres'] as $n) {
+            if (stripos($nombreLower, strtolower($n)) !== false) {
+                log_message('warning', 'Contacto spam bloqueado (blacklist nombre) IP: ' . $this->request->getIPAddress() . ' | ' . $nombre);
+                return redirect()->to(base_url('contacto'))->with('success', '¡Mensaje enviado! Te contactaremos pronto.');
+            }
+        }
+
+        if (in_array($emailLower, $blacklist['emails'], true)) {
+            log_message('warning', 'Contacto spam bloqueado (blacklist email) IP: ' . $this->request->getIPAddress() . ' | ' . $email);
+            return redirect()->to(base_url('contacto'))->with('success', '¡Mensaje enviado! Te contactaremos pronto.');
+        }
+
+        if ($dominio && in_array($dominio, $blacklist['dominios_email'], true)) {
+            log_message('warning', 'Contacto spam bloqueado (blacklist dominio) IP: ' . $this->request->getIPAddress() . ' | ' . $email);
+            return redirect()->to(base_url('contacto'))->with('success', '¡Mensaje enviado! Te contactaremos pronto.');
+        }
+
+        // Anti-spam: URLs en el mensaje (típico de spam)
+        if (preg_match_all('/https?:\/\//i', $mensaje) >= 2) {
+            log_message('warning', 'Contacto spam bloqueado (múltiples URLs) IP: ' . $this->request->getIPAddress() . ' | ' . $email);
+            return redirect()->to(base_url('contacto'))->with('success', '¡Mensaje enviado! Te contactaremos pronto.');
+        }
+
         $rules = [
             'nombre'   => 'required|min_length[2]',
             'email'    => 'required|valid_email',
@@ -53,12 +105,9 @@ class ContactoController extends BaseController
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
 
-        $nombre   = $this->request->getPost('nombre');
-        $email    = $this->request->getPost('email');
-        $empresa  = $this->request->getPost('empresa');
         $telefono = $this->request->getPost('telefono');
         $servicio = $this->request->getPost('servicio');
-        $mensaje  = $this->request->getPost('mensaje') ?? '';
+        $mensaje  = $mensaje ?: '';
 
         // 1) Guardar en base de datos (siempre)
         $contactoModel = new ContactoModel();
