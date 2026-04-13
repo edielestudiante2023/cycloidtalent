@@ -40,6 +40,11 @@ $routes->get('/legal/reglamento-higiene', 'LegalController::reglamentoHigiene');
 $routes->get('/admin/login',  'Admin\AuthController::login');
 $routes->post('/admin/login', 'Admin\AuthController::attemptLogin');
 $routes->get('/admin/logout', 'Admin\AuthController::logout');
+// Recuperación de contraseña
+$routes->get('/admin/forgot',        'Admin\AuthController::forgot');
+$routes->post('/admin/forgot',       'Admin\AuthController::sendReset');
+$routes->get('/admin/reset/(:segment)',  'Admin\AuthController::reset/$1');
+$routes->post('/admin/reset/(:segment)', 'Admin\AuthController::updatePassword/$1');
 
 // Admin — Protegido con auth
 $routes->group('admin', ['filter' => 'auth'], static function ($routes) {

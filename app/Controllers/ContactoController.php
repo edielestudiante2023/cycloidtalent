@@ -134,7 +134,7 @@ class ContactoController extends BaseController
                     'cc'      => [['email' => 'edison.cuervo@cycloidtalent.com']],
                     'subject' => "Nuevo contacto web — {$nombre} ({$empresa})",
                 ]],
-                'from'    => ['email' => 'noreply@cycloidtalent.com', 'name' => 'Cycloid Talent Web'],
+                'from'    => ['email' => 'notificacion.cycloidtalent@cycloidtalent.com', 'name' => 'Cycloid Talent Web'],
                 'reply_to' => ['email' => $email, 'name' => $nombre],
                 'content' => [[
                     'type'  => 'text/html',
