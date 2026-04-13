@@ -38,7 +38,9 @@
     <style>[x-cloak] { display: none !important; }</style>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="<?= base_url('img/otto-favicon.png') ?>">
+    <link rel="icon" type="image/png" sizes="192x192" href="<?= base_url('assets/img/icons/icon-192x192.png') ?>">
+    <link rel="icon" type="image/png" sizes="96x96" href="<?= base_url('assets/img/icons/icon-96x96.png') ?>">
+    <link rel="shortcut icon" href="<?= base_url('assets/img/icons/icon-192x192.png') ?>">
 
     <!-- PWA -->
     <link rel="manifest" href="<?= base_url('manifest.json') ?>">
