@@ -113,6 +113,28 @@ function seo_breadcrumb_jsonld(array $items): string
 }
 
 /**
+ * JSON-LD de FAQPage para rich snippets de preguntas frecuentes.
+ * @param array $faqs Lista de ['q' => pregunta, 'a' => respuesta]
+ */
+function seo_faq_jsonld(array $faqs): string
+{
+    $mainEntity = array_map(fn($faq) => [
+        '@type' => 'Question',
+        'name'  => $faq['q'],
+        'acceptedAnswer' => [
+            '@type' => 'Answer',
+            'text'  => $faq['a'],
+        ],
+    ], $faqs);
+
+    return json_encode([
+        '@context'   => 'https://schema.org',
+        '@type'      => 'FAQPage',
+        'mainEntity' => $mainEntity,
+    ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+}
+
+/**
  * Combina múltiples JSON-LD en un @graph.
  */
 function seo_graph_jsonld(array $jsonlds): string

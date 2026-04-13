@@ -7,8 +7,17 @@ class ServiciosController extends BaseController
     public function consultoriaSst()
     {
         $url = base_url('servicios/consultoria-sst');
-        $title = 'Consultoría SG-SST';
-        $desc  = 'Consultoría SG-SST en Colombia. Implementamos tu Sistema de Gestión de Seguridad y Salud en el Trabajo según Decreto 1072 y Resolución 0312.';
+        $title = 'Consultoría en SST Colombia | Implementación SG-SST';
+        $desc  = 'Consultoría en SST y Seguridad y Salud en el Trabajo en Colombia. Diseñamos, implementamos y mantenemos tu SG-SST según Decreto 1072 y Resolución 0312. Consultoría SST para empresas, propiedad horizontal y locales comerciales.';
+
+        $faqs = [
+            ['q' => '¿Qué es la consultoría en SST y por qué es obligatoria en Colombia?', 'a' => 'La consultoría en Seguridad y Salud en el Trabajo (SST) es el servicio profesional que ayuda a las empresas a diseñar e implementar un Sistema de Gestión SG-SST conforme al Decreto 1072 de 2015. Es obligatoria para TODAS las empresas en Colombia, sin importar su tamaño o sector, y su incumplimiento puede generar multas de hasta 500 SMMLV.'],
+            ['q' => '¿Cuánto cuesta una consultoría SST en Colombia?', 'a' => 'El costo de la consultoría en SST depende del tamaño de la empresa, la cantidad de trabajadores, la complejidad de los procesos y el nivel de riesgo. En Cycloid Talent ofrecemos planes adaptados desde micro empresas hasta medianas y grandes empresas. Solicita una cotización gratuita sin compromiso.'],
+            ['q' => '¿Qué diferencia hay entre la ARL y una consultoría SST externa?', 'a' => 'La ARL ofrece asesoría básica incluida en la cotización, pero no implementa el SG-SST por ti. Una consultoría SST externa como Cycloid Talent diseña, implementa, documenta y da seguimiento integral a tu Sistema de Gestión, garantizando el cumplimiento normativo completo.'],
+            ['q' => '¿Cuánto tiempo toma implementar el SG-SST?', 'a' => 'La implementación del SG-SST toma entre 3 y 6 meses dependiendo del tamaño de la empresa y su madurez previa en SST. El mantenimiento es continuo: el SG-SST requiere actualizaciones anuales y auditorías periódicas para mantenerse vigente.'],
+            ['q' => '¿A quién va dirigida esta consultoría en SST?', 'a' => 'Nuestra consultoría SST está dirigida a empresas de cualquier tamaño en Colombia: pymes, grandes empresas, propiedad horizontal (conjuntos residenciales y edificios), locales comerciales, contratistas y proveedores que deben cumplir con los estándares mínimos del Ministerio del Trabajo.'],
+            ['q' => '¿Qué pasa si no cumplo con el SG-SST?', 'a' => 'El incumplimiento del SG-SST genera sanciones económicas de hasta 500 salarios mínimos legales mensuales vigentes (SMMLV), clausura del establecimiento y responsabilidad legal del empleador ante accidentes o enfermedades laborales de los trabajadores.'],
+        ];
 
         return view('servicios/consultoria-sst', [
             'title'       => $title,
@@ -16,7 +25,8 @@ class ServiciosController extends BaseController
             'canonical'   => $url,
             'jsonld'      => seo_graph_jsonld([
                 seo_service_jsonld($title, $desc, $url),
-                seo_breadcrumb_jsonld([['Inicio', base_url('/')], [$title, $url]]),
+                seo_breadcrumb_jsonld([['Inicio', base_url('/')], ['Consultoría en SST', $url]]),
+                seo_faq_jsonld($faqs),
             ]),
         ]);
     }
