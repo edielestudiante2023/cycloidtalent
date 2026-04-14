@@ -1,4 +1,58 @@
-User-agent: *
-Disallow:
+# ============================================================
+# robots.txt — Cycloid Talent S.A.S.
+# https://cycloidtalent.com
+# ============================================================
 
+User-agent: *
+
+# Permitir assets estáticos (CSS, JS, imágenes)
+Allow: /assets/
+Allow: /img/
+Allow: /manifest.json
+
+# Bloquear panel administrativo
+Disallow: /admin/
+Disallow: /admin
+
+# Bloquear rutas internas de CodeIgniter
+Disallow: /writable/
+Disallow: /vendor/
+Disallow: /app/
+Disallow: /system/
+Disallow: /tests/
+
+# Bloquear URLs de envío de formularios (POST)
+Disallow: /contacto/enviar
+
+# Bloquear patrones de spam heredados del hackeo anterior
+Disallow: /item/
+Disallow: /product/edit/
+Disallow: /product/detail/
+Disallow: /pcmypage
+Disallow: /component/
+Disallow: /index.php/blog/
+Disallow: /index.php/component/
+Disallow: /*?option=com_
+
+# Bloquear archivos HTML sueltos en la raíz (spam)
+Disallow: /*.html$
+
+# Permitir excepciones del bloqueo anterior (verificación Google)
+Allow: /google*.html
+Allow: /offline.html
+
+# Bloquear bots agresivos conocidos
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Sitemap
 Sitemap: https://cycloidtalent.com/sitemap.xml
