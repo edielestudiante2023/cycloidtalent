@@ -8,25 +8,103 @@ function seo_organization_jsonld(): string
 {
     $data = [
         '@context'    => 'https://schema.org',
-        '@type'       => ['Organization', 'LocalBusiness'],
-        'name'        => 'Cycloid Talent SAS',
+        '@type'       => ['Organization', 'LocalBusiness', 'ProfessionalService'],
+        '@id'         => base_url('/') . '#organization',
+        'name'        => 'Cycloid Talent S.A.S.',
+        'alternateName' => 'Cycloid Talent',
+        'legalName'   => 'Cycloid Talent S.A.S.',
         'url'         => base_url('/'),
-        'logo'        => base_url('assets/img/logos/cycloid-logo-azul.png'),
-        'description' => 'Consultoría en Seguridad y Salud en el Trabajo (SST), Baterías de Riesgo Psicosocial y servicios especializados para empresas en Colombia.',
-        'telephone'   => '+573229074371',
-        'email'       => 'diana.cuestas@cycloidtalent.com',
-        'taxID'       => '901653912-2',
+        'logo'        => [
+            '@type'  => 'ImageObject',
+            'url'    => base_url('assets/img/icons/icon-192x192.png'),
+            'width'  => 192,
+            'height' => 192,
+        ],
+        'image'       => base_url('assets/img/logos/cycloid-logo-azul.png'),
+        'description' => 'Consultoría especializada en Seguridad y Salud en el Trabajo (SG-SST) y Batería de Riesgo Psicosocial en Colombia. Atendemos empresas, propiedad horizontal y locales comerciales conforme al Decreto 1072 y Resolución 2646.',
+        'slogan'      => 'Sistemas que evolucionan',
+        'foundingDate' => '2020',
+        'taxID'       => '901.653.912-2',
+        'vatID'       => '901653912-2',
+        'telephone'   => '+57 322 907 4371',
+        'email'       => 'notificacion.cycloidtalent@cycloidtalent.com',
         'address'     => [
             '@type'           => 'PostalAddress',
-            'streetAddress'   => 'Calle 13 # 31-106',
+            'streetAddress'   => 'Transversal 24B #17-209, Conjunto Residencial Sandalo, Oficina 202',
             'addressLocality' => 'Soacha',
             'addressRegion'   => 'Cundinamarca',
             'postalCode'      => '250051',
             'addressCountry'  => 'CO',
         ],
+        'geo' => [
+            '@type'     => 'GeoCoordinates',
+            'latitude'  => 4.5814,
+            'longitude' => -74.2170,
+        ],
         'areaServed'  => [
-            '@type' => 'Country',
-            'name'  => 'Colombia',
+            [
+                '@type' => 'Country',
+                'name'  => 'Colombia',
+            ],
+            [
+                '@type' => 'AdministrativeArea',
+                'name'  => 'Cundinamarca',
+            ],
+            [
+                '@type' => 'City',
+                'name'  => 'Bogotá',
+            ],
+            [
+                '@type' => 'City',
+                'name'  => 'Soacha',
+            ],
+        ],
+        'openingHoursSpecification' => [
+            [
+                '@type'     => 'OpeningHoursSpecification',
+                'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+                'opens'     => '08:00',
+                'closes'    => '17:00',
+            ],
+        ],
+        'priceRange' => '$$',
+        'hasOfferCatalog' => [
+            '@type' => 'OfferCatalog',
+            'name'  => 'Servicios Cycloid Talent',
+            'itemListElement' => [
+                [
+                    '@type' => 'Offer',
+                    'itemOffered' => [
+                        '@type' => 'Service',
+                        'name'  => 'Consultoría en SG-SST',
+                        'url'   => base_url('servicios/consultoria-sst'),
+                    ],
+                ],
+                [
+                    '@type' => 'Offer',
+                    'itemOffered' => [
+                        '@type' => 'Service',
+                        'name'  => 'Batería de Riesgo Psicosocial',
+                        'url'   => base_url('servicios/riesgo-psicosocial'),
+                    ],
+                ],
+                [
+                    '@type' => 'Offer',
+                    'itemOffered' => [
+                        '@type' => 'Service',
+                        'name'  => 'SST en Propiedad Horizontal',
+                        'url'   => base_url('servicios/propiedad-horizontal'),
+                    ],
+                ],
+            ],
+        ],
+        'contactPoint' => [
+            '@type'             => 'ContactPoint',
+            'telephone'         => '+57 322 907 4371',
+            'contactType'       => 'customer service',
+            'areaServed'        => 'CO',
+            'availableLanguage' => ['Spanish', 'es'],
+            'email'             => 'notificacion.cycloidtalent@cycloidtalent.com',
         ],
         'sameAs' => [
             'https://www.facebook.com/CycloidTalent',
