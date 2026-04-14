@@ -30,9 +30,13 @@ class HomeController extends BaseController
     public function clientes()
     {
         $data = [
-            'title'       => 'Nuestros Clientes',
-            'description' => 'Empresas que confían en Cycloid Talent para su gestión en Seguridad y Salud en el Trabajo en Colombia.',
+            'title'       => 'Nuestros Clientes | Consultoría SST Colombia — Cycloid Talent',
+            'description' => 'Más de 50 clientes en Colombia confían en la consultoría SST de Cycloid Talent. Empresas de servicios, propiedad horizontal, financiero, administrativo, comercializadores y mipymes que cumplen el SG-SST con nosotros.',
             'canonical'   => base_url('clientes'),
+            'jsonld'      => seo_graph_jsonld([
+                seo_organization_jsonld(),
+                seo_breadcrumb_jsonld([['Inicio', base_url('/')], ['Clientes', base_url('clientes')]]),
+            ]),
         ];
         return view('clientes/index', $data);
     }

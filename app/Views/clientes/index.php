@@ -5,9 +5,9 @@
 <section class="bg-cycloid-navy text-white py-10 sm:py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p class="text-cycloid-cyan text-sm font-semibold uppercase tracking-widest mb-3">Quiénes confían en nosotros</p>
-        <h1 class="text-3xl md:text-5xl font-extrabold">Nuestros clientes</h1>
+        <h1 class="text-3xl md:text-5xl font-extrabold">Nuestros clientes SST en Colombia</h1>
         <p class="mt-4 text-gray-300 max-w-2xl">
-            Empresas de diferentes sectores que han confiado en Cycloid Talent para gestionar su Seguridad y Salud en el Trabajo.
+            Más de 50 empresas de diferentes sectores en Colombia han confiado en Cycloid Talent para gestionar su Sistema de Seguridad y Salud en el Trabajo y la evaluación de Riesgo Psicosocial.
         </p>
     </div>
 </section>

@@ -5,9 +5,9 @@
 <section class="bg-cycloid-navy text-white py-10 sm:py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p class="text-cycloid-cyan text-sm font-semibold uppercase tracking-widest mb-3">Estamos para ayudarte</p>
-        <h1 class="text-3xl md:text-5xl font-extrabold">Contacto</h1>
+        <h1 class="text-3xl md:text-5xl font-extrabold">Contacto — Asesoría SST en Colombia</h1>
         <p class="mt-4 text-gray-300 max-w-2xl">
-            Cuéntanos qué necesita tu empresa y te responderemos en menos de 24 horas.
+            Solicita una asesoría gratuita en Consultoría SG-SST, Batería de Riesgo Psicosocial o SST en Propiedad Horizontal. Cuéntanos qué necesita tu empresa y te responderemos en menos de 24 horas.
         </p>
     </div>
 </section>

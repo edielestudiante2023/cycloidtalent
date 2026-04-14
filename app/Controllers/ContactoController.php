@@ -12,9 +12,13 @@ class ContactoController extends BaseController
         $this->response->setHeader('Pragma', 'no-cache');
 
         return view('contacto/index', [
-            'title'       => 'Contacto',
-            'description' => 'Contáctanos para una asesoría en SST, Baterías de Riesgo Psicosocial o cualquiera de nuestros servicios en Colombia.',
+            'title'       => 'Contacto | Asesoría SST y Riesgo Psicosocial Colombia',
+            'description' => 'Contacta a Cycloid Talent para una asesoría gratuita en SG-SST, Batería de Riesgo Psicosocial o SST en Propiedad Horizontal. Ubicados en Soacha, Cundinamarca. Atendemos empresas en toda Colombia.',
             'canonical'   => base_url('contacto'),
+            'jsonld'      => seo_graph_jsonld([
+                seo_organization_jsonld(),
+                seo_breadcrumb_jsonld([['Inicio', base_url('/')], ['Contacto', base_url('contacto')]]),
+            ]),
         ]);
     }
 
