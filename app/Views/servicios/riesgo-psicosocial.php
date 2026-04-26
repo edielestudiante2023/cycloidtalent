@@ -223,24 +223,26 @@
 <?= $this->include('partials/tools_section') ?>
 
 <!-- CTA dedicado a PsyRisk (subdominio especializado) -->
-<section class="py-16 sm:py-20 bg-gradient-to-br from-cycloid-navy to-cycloid-blue text-white">
+<section class="py-16 sm:py-20" style="background: linear-gradient(135deg, #0A1628 0%, #0345BF 100%); color: #ffffff;">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
             <div class="md:col-span-1 flex justify-center">
                 <img src="<?= base_url('img/logo_psirysk.png') ?>"
                      alt="Logo PsyRisk · Plataforma de Batería de Riesgo Psicosocial"
-                     class="w-32 h-32 md:w-40 md:h-40 object-contain bg-white/10 rounded-2xl p-4">
+                     class="w-32 h-32 md:w-40 md:h-40 object-contain rounded-2xl p-4"
+                     style="background: rgba(255,255,255,0.1);">
             </div>
             <div class="md:col-span-2">
-                <p class="text-cycloid-cyan text-xs font-semibold uppercase tracking-widest mb-2">Nueva plataforma especializada</p>
-                <h2 class="text-2xl md:text-3xl font-extrabold mb-4">
+                <p class="text-xs font-semibold uppercase tracking-widest mb-2" style="color: #00C6FF;">Nueva plataforma especializada</p>
+                <h2 class="text-2xl md:text-3xl font-extrabold mb-4" style="color: #ffffff;">
                     Conoce <strong>PsyRisk</strong>: nuestra plataforma digital para la Batería de Riesgo Psicosocial
                 </h2>
-                <p class="text-gray-200 leading-relaxed mb-5">
+                <p class="leading-relaxed mb-5" style="color: #e5e7eb;">
                     Como parte de Cycloid Talent, hemos creado <strong>PsyRisk</strong>, la plataforma diseñada específicamente para que las empresas colombianas cumplan la <strong>Resolución 2764 de 2022</strong> sin papeleo y con datos accionables: aplicación digital de la batería oficial Forma A y B, tabulación automática, reporte ejecutivo, Sistema de Vigilancia Epidemiológica activo y planes de intervención priorizados.
                 </p>
                 <a href="https://psyrisksite.cycloidtalent.com/" target="_blank" rel="noopener"
-                   class="inline-flex items-center gap-2 bg-white text-cycloid-navy px-6 py-3 rounded-xl font-bold hover:bg-cycloid-cyan hover:text-white transition-colors">
+                   class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold transition-colors"
+                   style="background: #ffffff; color: #0A1628;">
                     Conocer la plataforma PsyRisk
                     <span aria-label="Enlace externo">→</span>
                 </a>
