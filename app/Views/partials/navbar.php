@@ -36,6 +36,11 @@
                            class="block px-4 py-2 hover:bg-cycloid-bg hover:text-cycloid-blue transition-colors">Riesgo Psicosocial</a>
                         <a href="<?= base_url('servicios/propiedad-horizontal') ?>"
                            class="block px-4 py-2 hover:bg-cycloid-bg hover:text-cycloid-blue transition-colors">SST en Propiedad Horizontal</a>
+                        <div class="border-t border-gray-100 my-1"></div>
+                        <a href="https://psyrisksite.cycloidtalent.com/" target="_blank" rel="noopener"
+                           class="block px-4 py-2 hover:bg-cycloid-bg hover:text-cycloid-blue transition-colors">
+                            PsyRisk · Plataforma RPS <span class="text-xs" aria-label="Enlace externo">↗</span>
+                        </a>
                     </div>
                 </div>
 
@@ -85,6 +90,10 @@
                     <a href="<?= base_url('servicios/consultoria-sst') ?>" class="block py-1 hover:text-cycloid-blue">Consultoría SG-SST</a>
                     <a href="<?= base_url('servicios/riesgo-psicosocial') ?>" class="block py-1 hover:text-cycloid-blue">Riesgo Psicosocial</a>
                     <a href="<?= base_url('servicios/propiedad-horizontal') ?>" class="block py-1 hover:text-cycloid-blue">SST en Propiedad Horizontal</a>
+                    <a href="https://psyrisksite.cycloidtalent.com/" target="_blank" rel="noopener"
+                       class="block py-1 hover:text-cycloid-blue">
+                        PsyRisk · Plataforma RPS <span class="text-xs" aria-label="Enlace externo">↗</span>
+                    </a>
                 </div>
             </div>
 

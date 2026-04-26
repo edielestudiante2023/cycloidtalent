@@ -17,6 +17,12 @@
                 <ul class="space-y-2 text-sm text-gray-400">
                     <li><a href="<?= base_url('servicios/consultoria-sst') ?>" class="hover:text-cycloid-cyan transition-colors">Consultoría SG-SST</a></li>
                     <li><a href="<?= base_url('servicios/riesgo-psicosocial') ?>" class="hover:text-cycloid-cyan transition-colors">Riesgo Psicosocial</a></li>
+                    <li>
+                        <a href="https://psyrisksite.cycloidtalent.com/" target="_blank" rel="noopener"
+                           class="hover:text-cycloid-cyan transition-colors">
+                            PsyRisk · Plataforma de Batería Psicosocial <span aria-label="Enlace externo">↗</span>
+                        </a>
+                    </li>
                     <li><a href="<?= base_url('servicios/propiedad-horizontal') ?>" class="hover:text-cycloid-cyan transition-colors">SST en Propiedad Horizontal</a></li>
                 </ul>
             </div>

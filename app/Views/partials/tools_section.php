@@ -17,6 +17,19 @@
         <!-- Tool Cards centradas -->
         <div class="grid grid-cols-1 sm:grid-cols-2 <?= count($tools) >= 3 ? 'lg:grid-cols-' . min(count($tools), 4) : 'lg:grid-cols-2' ?> gap-5">
             <?php foreach ($tools as $tool): ?>
+            <?php if (! empty($tool['url'])): ?>
+            <a href="<?= $tool['url'] ?>" target="_blank" rel="noopener"
+               class="flex flex-col items-center text-center p-6 rounded-2xl bg-cycloid-bg border border-gray-100 hover:border-cycloid-blue/40 hover:shadow-md transition-all group">
+                <img src="<?= base_url('img/' . $tool['logo']) ?>"
+                     alt="<?= $tool['name'] ?>"
+                     style="width:80px;height:80px;object-fit:contain;"
+                     class="mb-4">
+                <h3 class="font-bold text-cycloid-navy text-sm mb-1 group-hover:text-cycloid-blue transition-colors">
+                    <?= $tool['name'] ?> <span class="text-xs" aria-label="Enlace externo">↗</span>
+                </h3>
+                <p class="text-xs text-gray-500 leading-relaxed"><?= $tool['desc'] ?></p>
+            </a>
+            <?php else: ?>
             <div class="flex flex-col items-center text-center p-6 rounded-2xl bg-cycloid-bg border border-gray-100 hover:border-cycloid-blue/20 hover:shadow-md transition-all">
                 <img src="<?= base_url('img/' . $tool['logo']) ?>"
                      alt="<?= $tool['name'] ?>"
@@ -25,6 +38,7 @@
                 <h3 class="font-bold text-cycloid-navy text-sm mb-1"><?= $tool['name'] ?></h3>
                 <p class="text-xs text-gray-500 leading-relaxed"><?= $tool['desc'] ?></p>
             </div>
+            <?php endif; ?>
             <?php endforeach; ?>
         </div>
 

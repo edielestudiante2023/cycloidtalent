@@ -215,12 +215,39 @@
 </section>
 
 <?php $this->setVar('tools', [
-    ['logo' => 'logo_psirysk.png', 'name' => 'PsyRisk', 'desc' => 'Plataforma de evaluación y análisis de batería de riesgo psicosocial laboral.'],
+    ['logo' => 'logo_psirysk.png', 'name' => 'PsyRisk', 'desc' => 'Plataforma de evaluación y análisis de batería de riesgo psicosocial laboral.', 'url' => 'https://psyrisksite.cycloidtalent.com/'],
     ['logo' => 'logo_rps.png', 'name' => 'Cycloid RPS', 'desc' => 'Portafolio integral de gestión de riesgo psicosocial.'],
     ['logo' => 'psicloidmethod.png', 'name' => 'Psycloid Method', 'desc' => 'Modelo propio de análisis e intervención de batería de riesgo psicosocial.'],
     ['logo' => 'sstrojo.png', 'name' => 'Cycloid SST', 'desc' => 'Plataforma de documentación, indicadores y trazabilidad SST.'],
 ]); ?>
 <?= $this->include('partials/tools_section') ?>
+
+<!-- CTA dedicado a PsyRisk (subdominio especializado) -->
+<section class="py-16 sm:py-20 bg-gradient-to-br from-cycloid-navy to-cycloid-blue text-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            <div class="md:col-span-1 flex justify-center">
+                <img src="<?= base_url('img/logo_psirysk.png') ?>"
+                     alt="Logo PsyRisk · Plataforma de Batería de Riesgo Psicosocial"
+                     class="w-32 h-32 md:w-40 md:h-40 object-contain bg-white/10 rounded-2xl p-4">
+            </div>
+            <div class="md:col-span-2">
+                <p class="text-cycloid-cyan text-xs font-semibold uppercase tracking-widest mb-2">Nueva plataforma especializada</p>
+                <h2 class="text-2xl md:text-3xl font-extrabold mb-4">
+                    Conoce <strong>PsyRisk</strong>: nuestra plataforma digital para la Batería de Riesgo Psicosocial
+                </h2>
+                <p class="text-gray-200 leading-relaxed mb-5">
+                    Como parte de Cycloid Talent, hemos creado <strong>PsyRisk</strong>, la plataforma diseñada específicamente para que las empresas colombianas cumplan la <strong>Resolución 2764 de 2022</strong> sin papeleo y con datos accionables: aplicación digital de la batería oficial Forma A y B, tabulación automática, reporte ejecutivo, Sistema de Vigilancia Epidemiológica activo y planes de intervención priorizados.
+                </p>
+                <a href="https://psyrisksite.cycloidtalent.com/" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-2 bg-white text-cycloid-navy px-6 py-3 rounded-xl font-bold hover:bg-cycloid-cyan hover:text-white transition-colors">
+                    Conocer la plataforma PsyRisk
+                    <span aria-label="Enlace externo">→</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 
 <?= $this->include('partials/contact_cta') ?>
 <?= $this->endSection() ?>
