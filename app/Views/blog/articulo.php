@@ -25,7 +25,7 @@
         </div>
         <?php endif; ?>
 
-        <div class="prose prose-lg max-w-none text-gray-600 leading-relaxed">
+        <div class="prose prose-lg max-w-none text-gray-600 leading-relaxed text-justify">
             <?= $post['contenido'] ?>
         </div>
 

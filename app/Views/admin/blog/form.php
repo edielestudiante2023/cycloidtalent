@@ -1,6 +1,13 @@
 <?= $this->extend('admin/layouts/main') ?>
 
 <?= $this->section('content') ?>
+<link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet">
+<style>
+    #editor { background:#fff; min-height:320px; border-radius:0 0 0.5rem 0.5rem; }
+    .ql-toolbar.ql-snow { border-top-left-radius:0.5rem; border-top-right-radius:0.5rem; border-color:#d1d5db; }
+    .ql-container.ql-snow { border-color:#d1d5db; font-family:inherit; font-size:0.95rem; }
+    .ql-editor { min-height:300px; }
+</style>
 <div style="max-width:48rem;">
     <a href="<?= base_url('admin/blog') ?>" class="text-blue-600 hover:underline text-sm" style="display:inline-block;margin-bottom:1rem;">&larr; Volver al blog</a>
 
@@ -27,9 +34,9 @@
             </div>
 
             <div style="margin-bottom:1rem;">
-                <label class="block text-sm font-medium text-gray-700" style="margin-bottom:0.25rem;">Contenido * (HTML permitido)</label>
-                <textarea name="contenido" rows="15" required
-                    style="width:100%;padding:0.5rem 1rem;border:1px solid #d1d5db;border-radius:0.5rem;outline:none;resize:vertical;font-family:monospace;font-size:0.875rem;"><?= old('contenido', $post['contenido'] ?? '') ?></textarea>
+                <label class="block text-sm font-medium text-gray-700" style="margin-bottom:0.25rem;">Contenido *</label>
+                <div id="editor"></div>
+                <textarea name="contenido" id="contenido" required style="display:none;"><?= old('contenido', $post['contenido'] ?? '') ?></textarea>
             </div>
 
             <div style="margin-bottom:1rem;">
@@ -61,4 +68,35 @@
         </form>
     </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+<script>
+(function () {
+    var quill = new Quill('#editor', {
+        theme: 'snow',
+        placeholder: 'Escribe el contenido del artículo...',
+        modules: {
+            toolbar: [
+                [{ header: [2, 3, false] }],
+                ['bold', 'italic', 'underline', 'strike'],
+                [{ list: 'ordered' }, { list: 'bullet' }],
+                [{ align: [] }],
+                ['blockquote', 'code-block'],
+                ['link'],
+                ['clean']
+            ]
+        }
+    });
+
+    var textarea = document.getElementById('contenido');
+    if (textarea.value.trim() !== '') {
+        quill.clipboard.dangerouslyPasteHTML(textarea.value);
+    }
+
+    var form = textarea.closest('form');
+    form.addEventListener('submit', function () {
+        textarea.value = quill.root.innerHTML;
+    });
+})();
+</script>
 <?= $this->endSection() ?>
