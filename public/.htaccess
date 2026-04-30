@@ -45,6 +45,9 @@ Options -Indexes
 	RewriteRule ^index\.php - [G,L]
 
 	# Patrón: /index.php/blog/* o similares de Joomla viejo
+	# Solo aplica al request HTTP original — evita falsos positivos cuando el front
+	# controller de CodeIgniter reescribe internamente /blog/... a index.php/blog/...
+	RewriteCond %{THE_REQUEST} \s/index\.php/(blog|component|joomla|administrator)/ [NC]
 	RewriteRule ^index\.php/(blog|component|joomla|administrator)/ - [G,L]
 
 	# ============================================================
