@@ -42,7 +42,13 @@ class BlogAdminController extends BaseController
         }
 
         $titulo = $this->request->getPost('titulo');
-        $slug   = url_title($titulo, '-', true);
+        // Transliterar tildes/eñes a ASCII antes de slugificar — CI4 rechaza
+        // URIs con caracteres acentuados (permittedURIChars) y rompen SEO/caché.
+        $tituloAscii = strtr($titulo, [
+            'á' => 'a', 'é' => 'e', 'í' => 'i', 'ó' => 'o', 'ú' => 'u', 'ü' => 'u', 'ñ' => 'n',
+            'Á' => 'A', 'É' => 'E', 'Í' => 'I', 'Ó' => 'O', 'Ú' => 'U', 'Ü' => 'U', 'Ñ' => 'N',
+        ]);
+        $slug   = url_title($tituloAscii, '-', true);
 
         // Verificar slug único
         $existing = $this->blogModel->where('slug', $slug)->first();
