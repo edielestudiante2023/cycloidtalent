@@ -95,12 +95,13 @@ class ContactoController extends BaseController
         }
 
         $rules = [
-            'nombre'   => 'required|min_length[2]',
-            'email'    => 'required|valid_email',
-            'empresa'  => 'required|min_length[2]',
-            'telefono' => 'required|min_length[7]',
-            'servicio' => 'required',
-            'mensaje'  => 'permit_empty',
+            'nombre'        => 'required|min_length[2]',
+            'email'         => 'required|valid_email',
+            'empresa'       => 'required|min_length[2]',
+            'telefono'      => 'required|min_length[7]',
+            'servicio'      => 'required',
+            'como_conocio'  => 'required',
+            'mensaje'       => 'permit_empty',
         ];
 
         if (! $this->validate($rules)) {
@@ -109,20 +110,22 @@ class ContactoController extends BaseController
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
 
-        $telefono = $this->request->getPost('telefono');
-        $servicio = $this->request->getPost('servicio');
-        $mensaje  = $mensaje ?: '';
+        $telefono     = $this->request->getPost('telefono');
+        $servicio     = $this->request->getPost('servicio');
+        $comoConocio  = (string) $this->request->getPost('como_conocio');
+        $mensaje      = $mensaje ?: '';
 
         // 1) Guardar en base de datos (siempre)
         $contactoModel = new ContactoModel();
         $guardado = $contactoModel->insert([
-            'nombre'     => $nombre,
-            'email'      => $email,
-            'telefono'   => $telefono,
-            'empresa'    => $empresa,
-            'asunto'     => $servicio,
-            'mensaje'    => $mensaje,
-            'ip_address' => $this->request->getIPAddress(),
+            'nombre'       => $nombre,
+            'email'        => $email,
+            'telefono'     => $telefono,
+            'empresa'      => $empresa,
+            'asunto'       => $servicio,
+            'mensaje'      => $mensaje,
+            'como_conocio' => $comoConocio,
+            'ip_address'   => $this->request->getIPAddress(),
         ]);
 
         if (! $guardado) {
@@ -149,6 +152,7 @@ class ContactoController extends BaseController
                         <p><strong>Empresa:</strong> " . esc($empresa) . "</p>
                         <p><strong>Teléfono:</strong> " . esc($telefono) . "</p>
                         <p><strong>Servicio de interés:</strong> " . esc($servicio) . "</p>
+                        <p><strong>¿Cómo nos conoció?:</strong> " . esc($comoConocio) . "</p>
                         <p><strong>Mensaje:</strong><br>" . nl2br(esc($mensaje)) . "</p>
                     ",
                 ]],

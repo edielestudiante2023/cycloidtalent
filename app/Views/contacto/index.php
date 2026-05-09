@@ -114,6 +114,21 @@
                                 <p class="text-red-500 text-xs mt-1"><?= $errors['servicio'] ?></p>
                                 <?php endif; ?>
                             </div>
+                            <div>
+                                <label class="block text-sm font-medium text-cycloid-text mb-1">¿Cómo nos conociste? *</label>
+                                <select name="como_conocio"
+                                        class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-cycloid-blue bg-white <?= isset($errors['como_conocio']) ? 'border-red-400' : '' ?>">
+                                    <option value="">Selecciona una opción</option>
+                                    <?php
+                                    $opcionesComoConocio = ['Google', 'Facebook', 'Instagram', 'TikTok', 'LinkedIn', 'YouTube', 'Referido', 'Evento o capacitación', 'Otro'];
+                                    foreach ($opcionesComoConocio as $opt): ?>
+                                        <option value="<?= esc($opt) ?>" <?= old('como_conocio') === $opt ? 'selected' : '' ?>><?= esc($opt) ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                                <?php if (isset($errors['como_conocio'])): ?>
+                                <p class="text-red-500 text-xs mt-1"><?= $errors['como_conocio'] ?></p>
+                                <?php endif; ?>
+                            </div>
                         </div>
 
                         <div class="mb-6">

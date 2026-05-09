@@ -38,6 +38,12 @@
                     <p class="mt-1"><?= esc($mensaje['empresa']) ?></p>
                 </div>
                 <?php endif; ?>
+                <?php if (! empty($mensaje['como_conocio'])): ?>
+                <div>
+                    <span class="text-xs text-gray-500 uppercase font-medium">¿Cómo nos conoció?</span>
+                    <p class="mt-1"><?= esc($mensaje['como_conocio']) ?></p>
+                </div>
+                <?php endif; ?>
             </div>
 
             <div class="pt-4 border-t border-gray-200">

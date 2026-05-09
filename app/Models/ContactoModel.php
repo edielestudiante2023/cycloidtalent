@@ -8,7 +8,7 @@ class ContactoModel extends Model
 {
     protected $table         = 'contacto';
     protected $primaryKey    = 'id';
-    protected $allowedFields = ['nombre', 'email', 'telefono', 'empresa', 'asunto', 'mensaje', 'leido', 'ip_address'];
+    protected $allowedFields = ['nombre', 'email', 'telefono', 'empresa', 'asunto', 'mensaje', 'como_conocio', 'leido', 'ip_address'];
     protected $useTimestamps = false;
     protected $createdField  = 'created_at';
 
