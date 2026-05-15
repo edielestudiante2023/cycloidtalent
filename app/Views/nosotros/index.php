@@ -52,6 +52,72 @@
     </div>
 </section>
 
+<!-- Certificaciones y licencias -->
+<section id="licencia-sst" class="py-14 sm:py-20 bg-cycloid-navy text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <p class="text-cycloid-cyan text-sm font-semibold uppercase tracking-widest mb-2">Respaldo institucional</p>
+            <h2 class="text-3xl md:text-4xl font-bold">Certificaciones y licencias</h2>
+        </div>
+
+        <div style="max-width:56rem;margin:0 auto;background:rgba(255,255,255,0.04);border:1px solid rgba(0,201,219,0.3);border-radius:1.5rem;padding:2rem;">
+            <div style="display:flex;flex-wrap:wrap;gap:1.5rem;align-items:flex-start;">
+                <div style="flex-shrink:0;width:4.5rem;height:4.5rem;background:rgba(0,201,219,0.15);border-radius:1rem;display:flex;align-items:center;justify-content:center;">
+                    <svg style="width:2.5rem;height:2.5rem;color:#00C9DB;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
+                </div>
+                <div style="flex:1;min-width:18rem;">
+                    <p class="text-cycloid-cyan text-xs font-semibold uppercase tracking-widest mb-1">Licencia oficial</p>
+                    <h3 class="text-xl md:text-2xl font-bold mb-2">Prestación de Servicios en Seguridad y Salud en el Trabajo</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Otorgada por la <strong class="text-white">Secretaría de Salud de Cundinamarca</strong> a CYCLOID TALENT S.A.S (NIT 901653912-2) mediante <strong class="text-white">Resolución No. 25-1231 del 06 de mayo de 2026</strong>, bajo la Ley 1562 de 2012 y la Resolución 908 de 2025 del Ministerio de Salud y Protección Social.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8 pt-8" style="border-top:1px solid rgba(255,255,255,0.08);">
+                <div>
+                    <p class="text-cycloid-cyan text-xs font-semibold uppercase tracking-widest mb-1">Vigencia</p>
+                    <p class="text-white font-semibold">10 años</p>
+                    <p class="text-gray-400 text-xs mt-0.5">Renovable</p>
+                </div>
+                <div>
+                    <p class="text-cycloid-cyan text-xs font-semibold uppercase tracking-widest mb-1">Cobertura</p>
+                    <p class="text-white font-semibold">Territorio nacional</p>
+                    <p class="text-gray-400 text-xs mt-0.5">Todo Colombia</p>
+                </div>
+                <div>
+                    <p class="text-cycloid-cyan text-xs font-semibold uppercase tracking-widest mb-1">Verificación</p>
+                    <p class="text-white font-semibold text-sm break-all">verificacioneslsst@<wbr>cundinamarca.gov.co</p>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-8" style="border-top:1px solid rgba(255,255,255,0.08);">
+                <p class="text-cycloid-cyan text-xs font-semibold uppercase tracking-widest mb-3">Campos de acción autorizados</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.85rem 1rem;background:rgba(0,201,219,0.05);border:1px solid rgba(0,201,219,0.2);border-radius:0.75rem;">
+                        <svg style="width:1.25rem;height:1.25rem;color:#00C9DB;margin-top:0.1rem;flex-shrink:0;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        <span class="text-sm text-gray-200">Diseño, administración y ejecución del Sistema de Gestión de la Seguridad y Salud en el Trabajo</span>
+                    </div>
+                    <div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.85rem 1rem;background:rgba(0,201,219,0.05);border:1px solid rgba(0,201,219,0.2);border-radius:0.75rem;">
+                        <svg style="width:1.25rem;height:1.25rem;color:#00C9DB;margin-top:0.1rem;flex-shrink:0;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        <span class="text-sm text-gray-200">Psicología en Seguridad y Salud en el Trabajo</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-gray-400 text-xs mt-6 italic">
+                * Conforme al Artículo Tercero de la Resolución, una copia de este acto administrativo se entrega a cada cliente al momento de la prestación del servicio.
+            </p>
+        </div>
+    </div>
+</section>
+
 <!-- Principios -->
 <section class="py-14 sm:py-20 bg-cycloid-bg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -41,6 +41,18 @@
                 Conoce el equipo
             </a>
         </div>
+
+        <!-- Badge de licencia oficial -->
+        <a href="<?= base_url('nosotros') ?>#licencia-sst"
+           style="display:inline-flex;align-items:center;gap:0.75rem;margin-top:2.5rem;padding:0.65rem 1.25rem;background:rgba(0,201,219,0.08);border:1px solid rgba(0,201,219,0.4);border-radius:9999px;text-decoration:none;color:#fff;backdrop-filter:blur(4px);">
+            <svg style="width:1.1rem;height:1.1rem;color:#00C9DB;flex-shrink:0;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+            <span style="font-size:0.85rem;line-height:1.4;text-align:left;">
+                <strong style="color:#00C9DB;">Licenciados por la Secretaría de Salud de Cundinamarca</strong><br>
+                <span style="color:#cbd5e1;font-size:0.78rem;">Resolución 25-1231 de 2026 · Vigencia 10 años · Cobertura nacional</span>
+            </span>
+        </a>
     </div>
 </section>
 

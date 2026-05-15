@@ -9,6 +9,12 @@
                 <p class="text-sm text-gray-400 leading-relaxed">
                     Consultoría especializada en Seguridad y Salud en el Trabajo y gestión del riesgo psicosocial para empresas colombianas.
                 </p>
+                <div style="display:inline-flex;align-items:center;gap:0.5rem;margin-top:0.75rem;padding:0.4rem 0.7rem;background:rgba(0,201,219,0.08);border:1px solid rgba(0,201,219,0.25);border-radius:9999px;">
+                    <svg style="width:0.9rem;height:0.9rem;color:#00C9DB;flex-shrink:0;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
+                    <span style="font-size:0.7rem;color:#cbd5e1;line-height:1.2;">Licencia SST · Res. 25-1231/2026<br><span style="color:#94a3b8;">Sec. Salud Cundinamarca</span></span>
+                </div>
             </div>
 
             <!-- Servicios -->

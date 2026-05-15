@@ -24,8 +24,11 @@
                 <p class="text-gray-500 leading-relaxed mb-6">
                     Los <strong>conjuntos residenciales, edificios de oficinas y centros comerciales en propiedad horizontal</strong> tienen trabajadores directos (porteros, personal de mantenimiento, jardineros, aseadoras, vigilantes internos) que están cubiertos por la normativa SST colombiana. El <strong>administrador del conjunto es el responsable legal</strong> ante el Ministerio del Trabajo, y el incumplimiento puede generar multas de hasta 500 SMMLV y responsabilidad civil solidaria ante accidentes laborales.
                 </p>
-                <p class="text-gray-500 leading-relaxed mb-8">
+                <p class="text-gray-500 leading-relaxed mb-4">
                     En Cycloid Talent desarrollamos un servicio especializado en <strong>SST para propiedad horizontal</strong>, con plataforma propia (Phorizontal) para el seguimiento y gestión digital de indicadores, capacitaciones y cumplimiento normativo.
+                </p>
+                <p class="text-gray-500 leading-relaxed mb-8" style="padding:0.85rem 1rem;background:#f0f9ff;border-left:4px solid #0345BF;border-radius:0.5rem;">
+                    <strong class="text-cycloid-navy">Cycloid Talent está licenciada</strong> por la Secretaría de Salud de Cundinamarca (<a href="<?= base_url('nosotros') ?>#licencia-sst" class="text-cycloid-blue hover:underline">Resolución 25-1231 de 2026</a>) para el <em>diseño, administración y ejecución del SG-SST</em>, lo que respalda nuestra capacidad técnica y legal para acompañar a administradores y consejos de propiedad horizontal en todo el país.
                 </p>
                 <ul class="space-y-3">
                     <?php

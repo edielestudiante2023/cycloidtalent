@@ -21,8 +21,11 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
                 <h2 class="text-2xl md:text-3xl font-bold text-cycloid-navy mb-5">¿Qué incluye nuestra consultoría en SST?</h2>
-                <p class="text-gray-500 leading-relaxed mb-8">
+                <p class="text-gray-500 leading-relaxed mb-4">
                     La <strong>consultoría en SST</strong> es obligatoria para todas las empresas en Colombia sin importar su tamaño o sector. No cumplir con el SG-SST puede generar multas de hasta 500 SMMLV. En Cycloid Talent implementamos tu Sistema de Gestión de Seguridad y Salud en el Trabajo de forma eficiente, adaptada a tu realidad empresarial.
+                </p>
+                <p class="text-gray-500 leading-relaxed mb-8" style="padding:0.85rem 1rem;background:#f0f9ff;border-left:4px solid #0345BF;border-radius:0.5rem;">
+                    <strong class="text-cycloid-navy">Cycloid Talent está licenciada</strong> por la Secretaría de Salud de Cundinamarca (<a href="<?= base_url('nosotros') ?>#licencia-sst" class="text-cycloid-blue hover:underline">Resolución 25-1231 de 2026</a>) para el <em>diseño, administración y ejecución del SG-SST</em> en todo el territorio nacional, con vigencia de 10 años.
                 </p>
                 <ul class="space-y-4">
                     <?php

@@ -21,8 +21,11 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             <div>
                 <h2 class="text-2xl md:text-3xl font-bold text-cycloid-navy mb-5">¿Qué evaluamos en la Batería de Riesgo Psicosocial?</h2>
-                <p class="text-gray-500 leading-relaxed mb-8">
+                <p class="text-gray-500 leading-relaxed mb-4">
                     El <strong>riesgo psicosocial</strong> afecta la salud mental, emocional y física de los trabajadores. Su gestión inadecuada genera ausentismo, accidentalidad y baja productividad. La Resolución 2646 de 2008 y la Resolución 2764 de 2022 obligan a todas las empresas colombianas a identificar, evaluar y controlar los factores de riesgo psicosocial laboral mediante la Batería del Ministerio del Trabajo.
+                </p>
+                <p class="text-gray-500 leading-relaxed mb-8" style="padding:0.85rem 1rem;background:#f0f9ff;border-left:4px solid #0345BF;border-radius:0.5rem;">
+                    <strong class="text-cycloid-navy">Cycloid Talent está licenciada</strong> por la Secretaría de Salud de Cundinamarca (<a href="<?= base_url('nosotros') ?>#licencia-sst" class="text-cycloid-blue hover:underline">Resolución 25-1231 de 2026</a>) en el campo de <em>Psicología en Seguridad y Salud en el Trabajo</em>, lo que respalda nuestra idoneidad para aplicar e interpretar la Batería de Riesgo Psicosocial en todo el país.
                 </p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <?php
