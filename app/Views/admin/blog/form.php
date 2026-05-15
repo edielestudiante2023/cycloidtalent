@@ -36,7 +36,7 @@
             <div style="margin-bottom:1rem;">
                 <label class="block text-sm font-medium text-gray-700" style="margin-bottom:0.25rem;">Contenido *</label>
                 <div id="editor"></div>
-                <textarea name="contenido" id="contenido" required style="display:none;"><?= old('contenido', $post['contenido'] ?? '') ?></textarea>
+                <textarea name="contenido" id="contenido" style="display:none;"><?= old('contenido', $post['contenido'] ?? '') ?></textarea>
             </div>
 
             <div style="margin-bottom:1rem;">
@@ -94,7 +94,14 @@
     }
 
     var form = textarea.closest('form');
-    form.addEventListener('submit', function () {
+    form.addEventListener('submit', function (e) {
+        var plainText = quill.getText().trim();
+        if (plainText === '') {
+            e.preventDefault();
+            alert('Por favor escribe el contenido del artículo antes de guardar.');
+            quill.focus();
+            return;
+        }
         textarea.value = quill.root.innerHTML;
     });
 })();
