@@ -25,6 +25,14 @@
                     <div class="mb-6 bg-green-50 border border-green-200 text-green-800 rounded-xl px-4 py-3 text-sm">
                         <?= session()->getFlashdata('success') ?>
                     </div>
+                    <script>
+                        if (typeof gtag === 'function') {
+                            gtag('event', 'generate_lead', {
+                                event_category: 'contact',
+                                event_label: 'contact_form_submitted'
+                            });
+                        }
+                    </script>
                     <?php endif; ?>
 
                     <?php if (session()->getFlashdata('error')): ?>

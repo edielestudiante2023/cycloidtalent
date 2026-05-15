@@ -54,6 +54,15 @@
     <?php if (isset($jsonld)): ?>
     <script type="application/ld+json"><?= $jsonld ?></script>
     <?php endif; ?>
+
+    <!-- Google tag (gtag.js) — Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TXM6N4C2CY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-TXM6N4C2CY');
+    </script>
 </head>
 <body class="bg-cycloid-bg text-cycloid-text font-sans antialiased" x-data>
 
