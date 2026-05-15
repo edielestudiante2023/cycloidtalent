@@ -77,9 +77,12 @@
         placeholder: 'Escribe el contenido del artículo...',
         modules: {
             toolbar: [
-                [{ header: [2, 3, false] }],
+                [{ header: [1, 2, 3, false] }],
+                [{ size: ['small', false, 'large', 'huge'] }],
                 ['bold', 'italic', 'underline', 'strike'],
+                [{ color: [] }, { background: [] }],
                 [{ list: 'ordered' }, { list: 'bullet' }],
+                [{ indent: '-1' }, { indent: '+1' }],
                 [{ align: [] }],
                 ['blockquote', 'code-block'],
                 ['link'],
